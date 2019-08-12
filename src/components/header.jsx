@@ -39,28 +39,31 @@ class Header extends React.Component{
     render(){
         const { home, content, themes, languages, about, search } = this.props.language.buttons
         return(
-            <styles.Header>
-                <div>
-                    <img src="/images/pigeon_PNG3420.png" alt={this.props.language.logoAlt} style={{
-                        width: 100, height: 100}}/>
-                    <p>
+            <styles.Header theme={this.props.theme.header}>
+                <styles.Logo>
+                    <styles.LogoPic src="/images/pigeon_PNG3420.png" alt={this.props.language.logoAlt} />
+                    <styles.SiteName theme={this.props.theme.header}>
                         {this.props.language.siteName}
-                    </p>
-                </div>
-                <nav>
-                    <Link to="/Home"
+                    </styles.SiteName>
+                </styles.Logo>
+                <styles.Nav>
+                    <styles.NavLink to="/Home"
                     onClick={() => {
                         return this.props.hideSubmenu()
-                    }}>{home}</Link>
-                    <button onClick={this.showContent}>{content}</button>
-                    <button onClick={this.showThemes}>{themes}</button>
-                    <button onClick={this.showLanguages}>{languages}</button>
-                    <Link to="/About"
+                    }} theme={this.props.theme.nav}>{home}</styles.NavLink>
+                    <styles.NavButton onClick={this.showContent} 
+                    theme={this.props.theme.nav}>{content}</styles.NavButton>
+                    <styles.NavButton onClick={this.showThemes} 
+                    theme={this.props.theme.nav}>{themes}</styles.NavButton>
+                    <styles.NavButton onClick={this.showLanguages} 
+                    theme={this.props.theme.nav}>{languages}</styles.NavButton>
+                    <styles.NavLink to="/About"
                     onClick={() => {
                         return this.props.hideSubmenu()
-                    }}>{about}</Link>
-                    <button onClick={this.showSearch}>{search}</button>
-                </nav>
+                    }} theme={this.props.theme.nav}>{about}</styles.NavLink>
+                    <styles.NavButton onClick={this.showSearch} 
+                    theme={this.props.theme.nav}>{search}</styles.NavButton>
+                </styles.Nav>
                 <div>
                     {this.props.currentDropdown === 'content' ? <ContentList /> :
                     this.props.currentDropdown === 'themes' ? <ThemesList /> :

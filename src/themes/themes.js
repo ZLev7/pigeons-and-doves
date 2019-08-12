@@ -11,8 +11,14 @@ export const nightBlue = {
         color: `#026FA8`
     },
     header: {
-        
-    }
+        background:`#13194C`,
+        color: `#026FA8`,
+    },
+    nav: {
+        color:`#026FA8`,
+        activeBg:`#007AFF`,
+        activeColor:`#13194C`,
+    },
 };
 
 export const summerBright = {
@@ -28,8 +34,14 @@ export const summerBright = {
         color: `black`
     },
     header: {
-        
-    }
+        background:`#cccccc`,
+        color: `black`,
+    },
+    nav: {
+        color:`black`,
+        activeBg:`black`,
+        activeColor:`#cccccc`,
+    },
 }
 
 export const winterNoon = {
@@ -43,6 +55,12 @@ export const winterNoon = {
         color: `#777777`
     },
     header: {
-        
-    }
+        background:`cornflowerblue`,
+        color: `floralwhite`,
+    },
+    nav: {
+        color:`floralwhite`,
+        activeBg:`floralwhite`,
+        activeColor:`cornflowerblue`,
+    },
 }
