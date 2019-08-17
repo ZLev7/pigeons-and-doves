@@ -48,7 +48,7 @@ const languageReducer = (state = {
 
 })
 
-const themeReducer = (state = nightBlue, action) => produce(state, draft => {
+const themeReducer = (state = winterNoon, action) => produce(state, draft => {
 
     switch(action.type){
         case actionTypes.USE_NB:

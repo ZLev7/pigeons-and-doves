@@ -462,7 +462,7 @@ export const engVers = {
         menuTitle: 'Site Map',
         usefulLinksTitle: 'Useful Links',
         usefulLinks: {
-            injured: 'If found an injured bird',
+            injured: 'If you found an injured bird',
             species: 'Other species of doves and pigeons',
             pictures: 'More pictures of pigeons and doves'
         },

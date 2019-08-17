@@ -7,6 +7,9 @@ class About extends React.Component {
     constructor(props){
         super(props);
     }
+    componentDidMount(){
+        window.scrollTo(0,0);
+    }
     render(){
         const { title, note, me } = this.props.language.about;
         return(

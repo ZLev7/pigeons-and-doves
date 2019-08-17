@@ -15,13 +15,21 @@ import { styles } from './styles/styles';
 export class App extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+            active: window.location.pathname
+        }
   }
+  changePath = (val) => {
+        this.setState({
+            active: val
+        });
+    }
   render(){
     return(
       <styles.Body theme={this.props.theme.body}>
         <styles.Content theme={this.props.theme.content}>
           <styles.Main>
-            <Header/>
+            <Header changePath={this.changePath} active={this.state.active}/>
             <Switch>
               <Route exact path="/Home" component={Home}/>
               <Route exact path="/Content/Breeds_Of_Pigeons" 
@@ -37,7 +45,7 @@ export class App extends React.Component {
               <Route component={None} />
             </Switch>
           </styles.Main>
-          <Footer />
+          <Footer changePath={this.changePath} active={this.state.active}/>
         </styles.Content>
       </styles.Body>
     )

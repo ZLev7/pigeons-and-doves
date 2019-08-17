@@ -1,5 +1,6 @@
 import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../../store/store';
+import { styles } from '../../styles/styles';
 import { connect } from 'react-redux';
 
 class LanguagesList extends React.Component{
@@ -14,10 +15,22 @@ class LanguagesList extends React.Component{
     }
     render(){
         return(
-            <div>
-                <button onClick={this.switchToRus}>Русский</button>
-                <button onClick={this.switchToEng}>English</button>
-            </div>
+            <styles.OptionsDropdown theme={this.props.theme.dropdown}>
+                <styles.SwitchButton onClick={this.switchToRus}
+                theme={this.props.theme.dropdown}>
+                    <styles.ActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.language.buttons.home === "Главная" ?
+                    'true' : 'false'}>Русский</styles.ActiveUnit>
+                </styles.SwitchButton>
+                <styles.SwitchButton onClick={this.switchToEng}
+                theme={this.props.theme.dropdown}>
+                    <styles.ActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.language.buttons.home === "Home" ?
+                    'true' : 'false'}>English</styles.ActiveUnit>
+                </styles.SwitchButton>
+            </styles.OptionsDropdown>
         )
     }
 }

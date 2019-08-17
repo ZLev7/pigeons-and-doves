@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const styles = {
 
-    Body: styled.body`
+    Body: styled.div`
         background-image: ${(props) => props.theme.backgroundImage};
         background-attachment: fixed;
     `,
@@ -15,7 +15,8 @@ export const styles = {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        border: ${(props) => props.theme.border};
+        border: 2px solid ${(props) => props.theme.border};
+        box-shadow: 0 0 2em ${(props) => props.theme.border};
         background: ${(props) => props.theme.background};
         color: ${(props) => props.theme.color};
     `,
@@ -29,17 +30,21 @@ export const styles = {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-family: Times New Roman;
         background: ${(props) => props.theme.background};
     `,
+
     Logo: styled.div`
         display: flex,
         width: 100%;
     `,
+
     LogoPic: styled.img`
         width: 100px;
         height: 120px;
-        margin: 15px 20px 0px 40px;
+        margin: 5px 20px 0px 40px;
     `,
+
     SiteName: styled.div`
         flex-grow: 1;
         display: flex;
@@ -50,15 +55,20 @@ export const styles = {
         color: ${(props) => props.theme.color};
         font-family: Times New Roman;
     `,
+
     Nav: styled.div`
         display: flex;
     `,
+
     NavLink: styled(Link)`
         text-decoration: none;
-        background: transparent;
+        background: ${(props) => props.primary === 'true' ? props.theme.activeBg : 
+        'transparent'};
         cursor: pointer;
-        font-size: 16px;
-        color: ${(props) => props.theme.color};
+        font-size: 20px;
+        font-weight: 500;
+        color: ${(props) => props.primary === 'true' ? props.theme.activeColor : 
+        props.theme.color};
         width: 16.75%;
         display: flex;
         justify-content: center;
@@ -69,12 +79,16 @@ export const styles = {
             color: ${(props) => props.theme.activeColor};
         };
     `,
+
     NavButton: styled.div`
         border: none;
-        background: transparent;
+        background: ${(props) => props.primary === 'true' ? props.theme.activeBg : 
+        'transparent'};
         cursor: pointer;
-        font-size: 16px;
-        color: ${(props) => props.theme.color};
+        font-size: 20px;
+        font-weight: 500;
+        color: ${(props) => props.primary === 'true' ? props.theme.activeColor : 
+        props.theme.color};
         width: 16.75%;
         display: flex;
         justify-content: center;
@@ -84,8 +98,149 @@ export const styles = {
             background: ${(props) => props.theme.activeBg};
             color: ${(props) => props.theme.activeColor};
         };
-        &:enabled {
-            border: none;
+    `,
+
+    OptionsDropdown: styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 20px;
+        background: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
+        height: 40px;
+        border-bottom: 2px solid ${(props) => props.theme.color};
+        padding-bottom: 3px;
+    `,
+
+    SearchDropdown: styled.div`
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 20px;
+        background: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
+        border-bottom: 2px solid ${(props) => props.theme.color};
+        padding-bottom: 3px;
+    `,
+
+    SearchInput: styled.input`
+        margin-top: 15px;
+        width: 250px;
+        height: 30px;
+        text-align: center;
+        font-size: 20px;
+        border-radius: 5px;
+        border: 2px solid ${(props) => props.theme.color};
+        background: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
+        &::placeholder{
+            font-size: 20px;
+            color: ${(props) => props.theme.color};
         }
+    `,
+
+    SearchResults: styled.div`
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 6px 0;
+    `,
+
+    ContentLink: styled(Link)`
+        margin: auto;
+        padding-top: 2px;
+        text-align: center;
+        color: ${(props) => props.theme.color};
+        text-decoration: none;
+    `,
+
+    ActiveUnit: styled.div`
+        margin: auto;
+        width: 100%;
+        padding: 5px 4px 4px 4px;
+        background: ${(props) => props.primary === 'true' ? 
+        props.theme.color : props.theme.background};
+        color: ${(props) => props.primary === 'true' ? 
+        props.theme.background : props.theme.color};
+        border-radius: 3px;
+        &:hover{
+            background: ${(props) => props.theme.color};
+            color: ${(props) => props.theme.background};
+        }
+    `,
+
+    SwitchButton: styled.div`
+        margin: auto;
+        padding-top: 2px;
+        text-align: center;
+        color: ${(props) => props.theme.color};
+        text-decoration: none;
+        cursor: pointer;
+    `,
+
+    Footer: styled.footer`
+        font-family: Times New Roman;
+        width: 100%;
+        display: flex;
+        background: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
+    `,
+
+    FooterSection: styled.section`
+        flex-grow: 1;
+        padding-left: 15px;
+        font-size: 16px;
+    `,
+
+    FooterNav: styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    `,
+
+    FooterLink: styled(Link)`
+        margin-bottom: 2px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 500;
+        height: 30px;
+    `,
+
+    FooterLinka: styled.a`
+        margin-bottom: 2px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 500;
+        height: 30px;
+    `,
+
+    FooterActiveUnit: styled.div`
+        width: auto;
+        padding: 5px 4px 4px 4px;
+        background: ${(props) => props.primary === 'true' ? 
+        props.theme.background : props.theme.color};
+        color: ${(props) => props.primary === 'true' ? 
+        props.theme.color : props.theme.background};
+        border-radius: 3px;
+        &:hover{
+            background: ${(props) => props.theme.background};
+            color: ${(props) => props.theme.color};
+        }
+    `,
+
+    FooterTitle: styled.h1`
+        margin-left: 4px;
+        margin-bottom: 14px;
+    `,
+
+    FooterIntextLink: styled.a`
+        color: ${(props) => props.theme.background};
+        text-decoration: none;
     `,
 }

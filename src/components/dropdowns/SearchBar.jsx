@@ -1,6 +1,7 @@
 import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../../store/store';
 import { Link } from 'react-router-dom';
+import { styles } from '../../styles/styles';
 import { connect } from 'react-redux';
 
 class SearchBar extends React.Component {
@@ -29,22 +30,30 @@ class SearchBar extends React.Component {
     }
     render(){
         return(
-            <div style={{display: 'flex', flexDirection: 'column'}}>
-                <input 
+            <styles.SearchDropdown  theme={this.props.theme.dropdown}>
+                <styles.SearchInput 
                 placeholder={this.props.language.search.placeholder} 
                 onChange={this.search}
                 value={this.state.searchValue}
-                style={{width: 300}}/>
-                {this.state.results.length !== 0 ? 
-                this.state.results.map((i) => 
-                    <Link to={i.path} id={i.name} key={i.name}
-                    onClick={() => {
-                        return this.props.hideSubmenu()
-                    }}>
-                        {i.name}
-                    </Link>)
-                : <p key={'none'}>{this.props.language.search.error}</p>}
-            </div>
+                theme={this.props.theme.dropdown}/>
+                <styles.SearchResults>
+                    {this.state.results.length !== 0 ? 
+                    this.state.results.map((i) => 
+                        <styles.ContentLink to={i.path} id={i.name} key={i.name}
+                        theme={this.props.theme.dropdown}
+                        onClick={() => {
+                            this.props.changePath(i.path)
+                            return this.props.hideSubmenu()
+                        }}>
+                            <styles.ActiveUnit theme={this.props.theme.dropdown}
+                            primary={this.props.active === i.path ?
+                            'true' : 'false'}>
+                                {i.name}
+                            </styles.ActiveUnit>
+                        </styles.ContentLink>)
+                    : <span key={'none'}>{this.props.language.search.error}</span>}
+                </styles.SearchResults>
+            </styles.SearchDropdown>
         )
     }
 }

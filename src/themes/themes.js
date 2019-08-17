@@ -6,7 +6,7 @@ export const nightBlue = {
             #007cf6, #0080f9, #0084fb, #0079f8, #006ef5, #0062f0, #0756eb);`,
     },
     content: {
-        border: `2px solid #007AFF`,
+        border: `none`,
         background: `#010621`,
         color: `#026FA8`
     },
@@ -14,10 +14,18 @@ export const nightBlue = {
         background:`#13194C`,
         color: `#026FA8`,
     },
+    footer: {
+        background:`#13194C`,
+        color: `#026FA8`,
+    },
     nav: {
         color:`#026FA8`,
         activeBg:`#007AFF`,
         activeColor:`#13194C`,
+    },
+    dropdown: {
+        background:`#7078C9`,
+        color:`#13194C`,
     },
 };
 
@@ -29,7 +37,7 @@ export const summerBright = {
             #f09a02, #e59203, #da8905, #cf8105, #c47906);`,
     },
     content: {
-        border: `2px solid black`,
+        border: `black`,
         background: `#DC8F00`,
         color: `black`
     },
@@ -37,10 +45,18 @@ export const summerBright = {
         background:`#cccccc`,
         color: `black`,
     },
+    footer: {
+        background:`#cccccc`,
+        color: `black`,
+    },
     nav: {
         color:`black`,
         activeBg:`black`,
         activeColor:`#cccccc`,
+    },
+    dropdown: {
+        background:`black`,
+        color:`#cccccc`,
     },
 }
 
@@ -50,7 +66,7 @@ export const winterNoon = {
         backgroundImage: `radial-gradient(circle, floralwhite, floralwhite, floralwhite)`,
     },
     content: {
-        border: `2px solid cornflowerblue`,
+        border: `cornflowerblue`,
         background: `floralwhite`,
         color: `#777777`
     },
@@ -58,9 +74,17 @@ export const winterNoon = {
         background:`cornflowerblue`,
         color: `floralwhite`,
     },
+    footer: {
+        background:`cornflowerblue`,
+        color: `floralwhite`,
+    },
     nav: {
         color:`floralwhite`,
         activeBg:`floralwhite`,
         activeColor:`cornflowerblue`,
+    },
+    dropdown: {
+        background:`floralwhite`,
+        color:`cornflowerblue`,
     },
 }

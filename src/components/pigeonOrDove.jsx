@@ -6,6 +6,9 @@ class PigeonOrDove extends React.Component {
     constructor(props){
         super(props)
     }
+    componentDidMount(){
+        window.scrollTo(0,0);
+    }
     render(){
         const { title, text1, text2, source } = this.props.language.pigeonOrDove;
         const { photo, name, sound, corUniv, chapman, 

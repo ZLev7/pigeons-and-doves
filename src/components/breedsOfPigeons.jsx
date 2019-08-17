@@ -7,6 +7,9 @@ class BreedsOfPigeons extends React.Component {
     constructor(props){
         super(props)
     }
+    componentDidMount(){
+        window.scrollTo(0,0);
+    }
     render(){
         const { title, text, slider } = this.props.language.breedsOfPigeons;
         const sliderArr = [
