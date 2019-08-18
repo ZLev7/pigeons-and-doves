@@ -25,7 +25,8 @@ class Footer extends React.Component{
                             return this.props.hideSubmenu()
                         }}>
                             <styles.FooterActiveUnit theme={this.props.theme.dropdown}
-                            primary={this.props.active === "/Home" ?
+                            primary={this.props.active === "/Home" || 
+                            this.props.active === "/" ?
                             'true' : 'false'}>
                                 {home}
                             </styles.FooterActiveUnit>

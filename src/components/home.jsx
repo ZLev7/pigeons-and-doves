@@ -19,7 +19,11 @@ class Home extends React.Component {
                 <p>{content.text2}</p>
                 <p>{content.text3}</p>
                 <ul>
-                    <li> <Link to="/Content/Pigeon_Or_Dove">{content.point1}</Link></li>
+                    <li> <Link to="/Content/Pigeon_Or_Dove"
+                    onClick={() => {
+                        this.props.changePath("/Content/Pigeon_Or_Dove")
+                        return this.props.hideSubmenu()
+                    }}>{content.point1}</Link></li>
                     <figure>
                         <img src="images/photo_2019-03-16_13-43-21.jpg" 
                         alt={content.doveAltName} />
@@ -39,8 +43,16 @@ class Home extends React.Component {
                             </p>
                         </figcaption>
                     </figure>
-                    <li><Link to="/Content/Breeds_Of_Pigeons">{content.point2}</Link></li>
-                    <li><Link to="/Content/Doves_As_Pets">{content.point3}</Link></li>
+                    <li><Link to="/Content/Breeds_Of_Pigeons"
+                    onClick={() => {
+                        this.props.changePath("/Content/Breeds_Of_Pigeons")
+                        return this.props.hideSubmenu()
+                    }}>{content.point2}</Link></li>
+                    <li><Link to="/Content/Doves_As_Pets"
+                    onClick={() => {
+                        this.props.changePath("/Content/Doves_As_Pets")
+                        return this.props.hideSubmenu()
+                    }}>{content.point3}</Link></li>
                 </ul>
             </div>
         )

@@ -209,7 +209,7 @@ export const styles = {
     `,
 
     FooterLink: styled(Link)`
-        margin-bottom: 2px;
+        white-space: nowrap;
         text-decoration: none;
         cursor: pointer;
         font-size: 20px;
@@ -217,7 +217,7 @@ export const styles = {
     `,
 
     FooterLinka: styled.a`
-        margin-bottom: 2px;
+        white-space: nowrap;
         text-decoration: none;
         cursor: pointer;
         font-size: 20px;

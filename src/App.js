@@ -31,7 +31,8 @@ export class App extends React.Component {
           <styles.Main>
             <Header changePath={this.changePath} active={this.state.active}/>
             <Switch>
-              <Route exact path="/Home" component={Home}/>
+              <Route exact path="/Home" render={(props) =>
+              <Home {...props} changePath={this.changePath} active={this.state.active} />}/>
               <Route exact path="/Content/Breeds_Of_Pigeons" 
               component={BreedsOfPigeons}/>
               <Route exact path="/Content/Doves_As_Pets" 
