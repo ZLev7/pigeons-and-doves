@@ -76,9 +76,9 @@ class Footer extends React.Component{
                         </styles.FooterLink>
                     </styles.FooterNav>
                 </styles.FooterSection>
-                <styles.FooterSection style={{width: 45}}>
+                <styles.FooterFiller style={{width: 70}}>
 
-                </styles.FooterSection>
+                </styles.FooterFiller>
                 <styles.FooterSection>
                     <styles.FooterTitle>
                         {usefulLinksTitle}
@@ -104,9 +104,9 @@ class Footer extends React.Component{
                         </styles.FooterLinka>
                     </styles.FooterNav>
                 </styles.FooterSection>
-                <styles.FooterSection style={{width: 50}}>
+                <styles.FooterFiller style={{width: 70}}>
 
-                </styles.FooterSection>
+                </styles.FooterFiller>
                 <styles.FooterSection>
                     <h1>
                         {aboutTitle}

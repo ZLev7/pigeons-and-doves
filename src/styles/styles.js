@@ -191,9 +191,15 @@ export const styles = {
     `,
 
     FooterSection: styled.section`
-        flex-grow: 1;
         padding-left: 15px;
         font-size: 16px;
+        &:last-child{
+            margin-right: 20px;
+        }
+    `,
+
+    FooterFiller: styled.div`
+        flex-grow: 1;
     `,
 
     FooterNav: styled.div`
@@ -208,7 +214,6 @@ export const styles = {
         cursor: pointer;
         font-size: 20px;
         font-weight: 500;
-        height: 30px;
     `,
 
     FooterLinka: styled.a`
@@ -217,7 +222,6 @@ export const styles = {
         cursor: pointer;
         font-size: 20px;
         font-weight: 500;
-        height: 30px;
     `,
 
     FooterActiveUnit: styled.div`
