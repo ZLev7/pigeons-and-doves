@@ -2,6 +2,7 @@ import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../store/store';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { styles } from '../styles/styles';
 
 class Home extends React.Component {
     constructor(props){
@@ -13,48 +14,52 @@ class Home extends React.Component {
     render(){
         const { title, content } = this.props.language.home
         return(
-            <div>
+            <styles.Article>
                 <h1>{title}</h1>
                 <p>{content.text1}</p>
                 <p>{content.text2}</p>
                 <p>{content.text3}</p>
-                <ul>
-                    <li> <Link to="/Content/Pigeon_Or_Dove"
+                <ol>
+                    <li> <styles.IntextLink to="/Content/Pigeon_Or_Dove"
                     onClick={() => {
                         this.props.changePath("/Content/Pigeon_Or_Dove")
                         return this.props.hideSubmenu()
-                    }}>{content.point1}</Link></li>
-                    <figure>
-                        <img src="images/photo_2019-03-16_13-43-21.jpg" 
-                        alt={content.doveAltName} />
-                        <figcaption>
-                            <p>
-                                {content.sourceDoveAuthor}
-                            </p>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img src="images/14_12_Columba_livia_our_pigeon_similar.jpg" 
-                        alt={content.pigeonAltName} />
-                        <figcaption>
-                            <p>
-                                <a href="https://www.diamonddove.info/bird14%20Rock%20Dove.htm" 
-                                target="_blank">{content.sourcePigeonAuthor}</a>
-                            </p>
-                        </figcaption>
-                    </figure>
-                    <li><Link to="/Content/Breeds_Of_Pigeons"
+                    }} theme={this.props.theme.dropdown}>{content.point1}</styles.IntextLink></li>
+                    <div style={{display: 'flex'}}>
+                        <styles.HomeFigure>
+                            <styles.HomePicture src="images/photo_2019-03-16_13-43-21.jpg" 
+                            alt={content.doveAltName}
+                            theme={this.props.theme.content}/>
+                            <figcaption>
+                                <p>
+                                    {content.sourceDoveAuthor}
+                                </p>
+                            </figcaption>
+                        </styles.HomeFigure>
+                        <styles.HomeFigure>
+                            <styles.HomePicture src="images/14_12_Columba_livia_our_pigeon_similar.jpg" 
+                            alt={content.pigeonAltName}
+                            theme={this.props.theme.content}/>
+                            <figcaption>
+                                <p>
+                                    <styles.IntextLinka href="https://www.diamonddove.info/bird14%20Rock%20Dove.htm" 
+                                    target="_blank">{content.sourcePigeonAuthor}</styles.IntextLinka>
+                                </p>
+                            </figcaption>
+                        </styles.HomeFigure>
+                    </div>
+                    <li><styles.IntextLink to="/Content/Breeds_Of_Pigeons"
                     onClick={() => {
                         this.props.changePath("/Content/Breeds_Of_Pigeons")
                         return this.props.hideSubmenu()
-                    }}>{content.point2}</Link></li>
-                    <li><Link to="/Content/Doves_As_Pets"
+                    }} theme={this.props.theme.dropdown}>{content.point2}</styles.IntextLink></li>
+                    <li><styles.IntextLink to="/Content/Doves_As_Pets"
                     onClick={() => {
                         this.props.changePath("/Content/Doves_As_Pets")
                         return this.props.hideSubmenu()
-                    }}>{content.point3}</Link></li>
-                </ul>
-            </div>
+                    }} theme={this.props.theme.dropdown}>{content.point3}</styles.IntextLink></li>
+                </ol>
+            </styles.Article>
         )
     }
 }

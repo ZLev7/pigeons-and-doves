@@ -74,7 +74,13 @@ export const styles = {
         justify-content: center;
         align-items: center;
         height: 30px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        &:first-child{
+            border-top-left-radius: 0;
+        };
         &:hover {
+            transition: 0.2s ease-out;
             background: ${(props) => props.theme.activeBg};
             color: ${(props) => props.theme.activeColor};
         };
@@ -94,7 +100,13 @@ export const styles = {
         justify-content: center;
         align-items: center;
         height: 30px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        &:last-child{
+            border-top-right-radius: 0;
+        };
         &:hover {
+            transition: 0.2s ease-out;
             background: ${(props) => props.theme.activeBg};
             color: ${(props) => props.theme.activeColor};
         };
@@ -166,8 +178,9 @@ export const styles = {
         props.theme.color : props.theme.background};
         color: ${(props) => props.primary === 'true' ? 
         props.theme.background : props.theme.color};
-        border-radius: 3px;
+        border-radius: 5px;
         &:hover{
+            transition: 0.1s ease-out;
             background: ${(props) => props.theme.color};
             color: ${(props) => props.theme.background};
         }
@@ -228,11 +241,12 @@ export const styles = {
         width: auto;
         padding: 5px 4px 4px 4px;
         background: ${(props) => props.primary === 'true' ? 
-        props.theme.background : props.theme.color};
+        props.theme.background : props.theme.nonActiveColor};
         color: ${(props) => props.primary === 'true' ? 
-        props.theme.color : props.theme.background};
-        border-radius: 3px;
+        props.theme.color : props.theme.nonActiveBackground};
+        border-radius: 5px;
         &:hover{
+            transition: 0.1s ease-out;
             background: ${(props) => props.theme.background};
             color: ${(props) => props.theme.color};
         }
@@ -244,7 +258,42 @@ export const styles = {
     `,
 
     FooterIntextLink: styled.a`
-        color: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.nonActiveBackground};
         text-decoration: none;
+    `,
+
+    Article: styled.div`
+        margin: 30px 40px 30px 40px;
+        font-size: 15pt;
+    `,
+
+    IntextLink: styled(Link)`
+        color: inherit;
+        text-decoration: none;
+    `,
+
+    IntextLinka: styled.a`
+        color: inherit;
+        text-decoration: none;
+    `,
+
+    HomePicture: styled.img`
+        width: 370px;
+        height: 400px;
+        transition: 0.4s ease-out;
+        border: 2px solid ${(props) => props.theme.border};
+        border-radius: 5px;
+        &:hover{
+            cursor: pointer;
+            transition: 0.4s ease-out;
+            transform: scale(1.44);
+        }
+    `,
+
+    HomeFigure: styled.figure`
+        margin-left: 1px;
+        &:first-child{
+            margin-right: 29px;
+        }
     `,
 }

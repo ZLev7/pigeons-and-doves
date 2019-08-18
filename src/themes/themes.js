@@ -6,7 +6,7 @@ export const nightBlue = {
             #007cf6, #0080f9, #0084fb, #0079f8, #006ef5, #0062f0, #0756eb);`,
     },
     content: {
-        border: `none`,
+        border: `#026FA8`,
         background: `#010621`,
         color: `#026FA8`
     },
@@ -20,12 +20,14 @@ export const nightBlue = {
     },
     nav: {
         color:`#026FA8`,
-        activeBg:`#007AFF`,
-        activeColor:`#13194C`,
+        activeBg:`#010621`,
+        activeColor:`#026FA8`,
     },
     dropdown: {
-        background:`#7078C9`,
-        color:`#13194C`,
+        background:`#010621`,
+        color:`#026FA8`,
+        nonActiveBackground: `#026FA8`,
+        nonActiveColor: `#13194C`,
     },
 };
 
@@ -51,12 +53,14 @@ export const summerBright = {
     },
     nav: {
         color:`black`,
-        activeBg:`black`,
-        activeColor:`#cccccc`,
+        activeBg:`#DC8F00`,
+        activeColor:`black`,
     },
     dropdown: {
-        background:`black`,
-        color:`#cccccc`,
+        background:`#DC8F00`,
+        color:`black`,
+        nonActiveBackground: `black`,
+        nonActiveColor: `#cccccc`,
     },
 }
 
@@ -86,5 +90,7 @@ export const winterNoon = {
     dropdown: {
         background:`floralwhite`,
         color:`cornflowerblue`,
+        nonActiveBackground: `floralwhite`,
+        nonActiveColor: `cornflowerblue`,
     },
 }
