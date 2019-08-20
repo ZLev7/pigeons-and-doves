@@ -9,8 +9,7 @@ export const styles = {
     `,
 
     Content: styled.div`
-        max-width: 940px;
-        min-width: 940px;
+        width: 940px !important;
         margin: 0 auto;
         font-family: Arial;
         display: flex;
