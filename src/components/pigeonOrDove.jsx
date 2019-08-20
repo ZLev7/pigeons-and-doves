@@ -1,5 +1,6 @@
 import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../store/store';
+import { styles } from '../styles/styles';
 import { connect } from 'react-redux';
 
 class PigeonOrDove extends React.Component {
@@ -15,97 +16,99 @@ class PigeonOrDove extends React.Component {
             author, rPigeon, cDove, sDove, nbc,
             altPigeon, altCDove, altSDove } = this.props.language.pigeonOrDove.table;
         return(
-            <div>
-                <h1 style={{color: this.props.theme.body.color}}>{title}</h1>
+            <styles.Article>
+                <h1>{title}</h1>
                 <p>
                     {text1}
                 </p>
                 <p>
                     {text2}
                 </p>
-                <table style={{border: '1px solid cornflowerblue',
-                                    borderCollapse: 'collapse'}}>
-                    <tr style={{border: '1px solid cornflowerblue'}}>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                <styles.Table theme={this.props.theme.dropdown}>
+                    <tr>
+                        <styles.TableHead theme={this.props.theme.dropdown}>
                             {photo}
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                        </styles.TableHead>
+                        <styles.TableHead theme={this.props.theme.dropdown}>
                             {name}
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                        </styles.TableHead>
+                        <styles.TableHead theme={this.props.theme.dropdown}>
                             {sound}
-                        </td>
+                        </styles.TableHead>
                     </tr>
-                    <tr style={{border: '1px solid cornflowerblue'}}>
-                        <td style={{border: '1px solid cornflowerblue'}}>
-                            <figure>
-                                <img src="/images/66031271-720px.jpg" 
-                                alt={altPigeon} style={{width: 400, height: 300}}/>
+                    <tr>
+                        <styles.TableImgContainer theme={this.props.theme.dropdown}>
+                            <styles.TableFigure>
+                                <styles.TableImg src="/images/66031271-720px.jpg" 
+                                alt={altPigeon}
+                                theme={this.props.theme.dropdown}/>
                                 <figcaption>
-                                    <a href="https://www.allaboutbirds.org/guide/Rock_Pigeon/id"
-                                     target="_blank">{source} {corUniv}</a>
+                                    <styles.IntextLinka href="https://www.allaboutbirds.org/guide/Rock_Pigeon/id"
+                                     target="_blank">{source} {corUniv}</styles.IntextLinka>
                                 </figcaption>    
-                            </figure>                    
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                            </styles.TableFigure>                    
+                        </styles.TableImgContainer>
+                        <styles.TableCell theme={this.props.theme.dropdown}>
                             {rPigeon}
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                        </styles.TableCell>
+                        <styles.TableCell theme={this.props.theme.dropdown}>
                             <audio controls>
                                 <source src="/media/golub-vorkuet-pered-golubkoj.mp3"
                                  type="audio/mpeg" />
                             </audio><br />
-                            <a href="http://boobooka.com/zvuki/zvuki-ptic/zvuk-golubya/"
-                             target="_blank">{source} BooBooka, 2019</a>
-                        </td>
+                            <styles.IntextLinka href="http://boobooka.com/zvuki/zvuki-ptic/zvuk-golubya/"
+                             target="_blank">{source} BooBooka, 2019</styles.IntextLinka>
+                        </styles.TableCell>
                     </tr>
-                    <tr style={{border: '1px solid cornflowerblue'}}>
-                        <td style={{border: '1px solid cornflowerblue'}}>
-                            <figure>
-                                <img src="/images/collared-dove-1280.jpg" 
-                                alt={altCDove} style={{width: 400, height: 300}}/>
+                    <tr>
+                        <styles.TableImgContainer theme={this.props.theme.dropdown}>
+                            <styles.TableFigure>
+                                <styles.TableImg src="/images/collared-dove-1280.jpg" 
+                                alt={altCDove}
+                                theme={this.props.theme.dropdown}/>
                                 <figcaption>
-                                    <a href="https://www.saga.co.uk/magazine/home-garden/gardening/wildlife/birds/collared-dove"
-                                     target="_blank">{source} {chapman}</a>
+                                    <styles.IntextLinka href="https://www.saga.co.uk/magazine/home-garden/gardening/wildlife/birds/collared-dove"
+                                     target="_blank">{source} {chapman}</styles.IntextLinka>
                                 </figcaption>
-                            </figure>
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                            </styles.TableFigure>
+                        </styles.TableImgContainer>
+                        <styles.TableCell theme={this.props.theme.dropdown}>
                             {cDove}
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                        </styles.TableCell>
+                        <styles.TableCell theme={this.props.theme.dropdown}>
                             <audio controls>
                                 <source src="/media/Dove-sound-eurasian-collared-dove.mp3"
                                  type="audio/mpeg" />
                             </audio><br />
-                            <a href="http://www.orangefreesounds.com/dove-sound-eurasian-collared-dove/"
-                             target="_blank">{source} Orange Free Sounds, 2015</a>
-                        </td>
+                            <styles.IntextLinka href="http://www.orangefreesounds.com/dove-sound-eurasian-collared-dove/"
+                             target="_blank">{source} Orange Free Sounds, 2015</styles.IntextLinka>
+                        </styles.TableCell>
                     </tr>
-                    <tr style={{border: '1px solid cornflowerblue'}}>
-                        <td style={{border: '1px solid cornflowerblue'}}>
-                            <figure>
-                                <img src="/images/photo_2019-03-16_17-02-41.jpg" 
-                                alt={altSDove} style={{width: 400, height: 300}}/>
+                    <tr>
+                        <styles.TableImgContainer theme={this.props.theme.dropdown}>
+                            <styles.TableFigure>
+                                <styles.TableImg src="/images/photo_2019-03-16_17-02-41.jpg" 
+                                alt={altSDove}
+                                theme={this.props.theme.dropdown}/>
                                 <figcaption>
                                     {source} {author}
                                 </figcaption>
-                            </figure>
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                            </styles.TableFigure>
+                        </styles.TableImgContainer>
+                        <styles.TableCell theme={this.props.theme.dropdown}>
                             {sDove}
-                        </td>
-                        <td style={{border: '1px solid cornflowerblue'}}>
+                        </styles.TableCell>
+                        <styles.TableCell theme={this.props.theme.dropdown}>
                             <audio controls>
                                 <source src="/media/XC405376.mp3"
                                  type="audio/mpeg" />
                             </audio><br />
-                            <a href="https://www.xeno-canto.org/species/Spilopelia-senegalensis"
-                             target="_blank">{source} {nbc}</a>
-                        </td>
+                            <styles.IntextLinka href="https://www.xeno-canto.org/species/Spilopelia-senegalensis"
+                             target="_blank">{source} {nbc}</styles.IntextLinka>
+                        </styles.TableCell>
                     </tr>
-                </table>
-            </div>
+                </styles.Table>
+            </styles.Article>
         )
     }
 }

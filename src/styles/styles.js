@@ -296,4 +296,154 @@ export const styles = {
             margin-right: 29px;
         }
     `,
+
+    Table: styled.table`
+        border: 2px solid ${(props) => props.theme.color};
+        border-collapse: collapse;
+        width: 100%;
+    `,
+
+    TableCell: styled.td`
+        border: 2px solid ${(props) => props.theme.color};
+        height: 240px;
+        text-align: center;
+    `,
+
+    TableImgContainer: styled.td`
+        border: 2px solid ${(props) => props.theme.color};
+        width: 300px;
+        padding: 0;
+        padding-bottom: 3px;
+        text-align: center;
+    `,
+
+    TableHead: styled.td`
+        border: 2px solid ${(props) => props.theme.color};
+        height: 40px;
+        text-align: center;
+    `,
+
+    TableImg: styled.img`
+        height: 80%;
+        width: 100%;
+        border-bottom: 2px solid ${(props) => props.theme.color};
+    `,
+
+    TableFigure: styled.figure`
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    `,
+
+    Slider: styled.div`
+        width: 100%;
+        display: flex;
+        position: relative;
+    `,
+
+    SliderImg: styled.img`
+        width: 100%;
+        height: 600px;
+        border: 2px solid ${(props) => props.theme.color};
+        border-radius: 10px;
+    `,
+
+    Next: styled.div`
+        position: absolute;
+        right: -2px;
+        top: 269px;
+        padding-bottom: 3px;
+        cursor: pointer;
+        height: 60px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        transition: 0.4s ease-out;
+        &:hover{
+            cursor: pointer;
+            transition: 0.4s ease-out;
+            background: ${(props) => props.theme.color};
+            color: ${(props) => props.theme.background};
+        }
+    `,
+
+    Back: styled.div`
+        position: absolute;
+        top: 269px;
+        padding-bottom: 3px;
+        cursor: pointer;
+        height: 60px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: 0.4s ease-out;
+        &:hover{
+            cursor: pointer;
+            transition: 0.4s ease-out;
+            background: ${(props) => props.theme.color};
+            color: ${(props) => props.theme.background};
+        }
+        z-index: 1;
+    `,
+
+    Dots: styled.div`
+        position: absolute;
+        width: 24%;
+        bottom: 10%;
+        left: 38%;
+        display: flex;
+    `,
+
+    Dot: styled.div`
+        background: ${(props) => props.primary === 'true' ? 
+        props.theme.nonActiveColor : '#777777'};
+        border-radius: 15px;
+        height: 20px;
+        width: 25%;
+        margin: 5px;
+        transition: 0.4s ease-out;
+        &:hover{
+            cursor: pointer;
+            transition: 0.4s ease-out;
+            background: ${(props) => props.theme.nonActiveColor};
+        }
+    `,
+
+    SliderFigure: styled.figure`
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    `,
+
+    SliderFigCapture: styled.figcaption`
+        position: absolute;
+        bottom: 1.5%;
+        left: 1%;
+        color: floralwhite;
+    `,
+
+    YouTubeVideo: styled.iframe`
+        width: 100%;
+        height: 645px;
+        border: 2px solid ${(props) => props.theme.color};
+        border-radius: 10px;
+    `,
+
+    AboutContainer: styled.div`
+        display: flex;
+        justify-content: space-between;
+    `,
+
+    Aside: styled.aside`
+        width: 49%;
+    `,
 }

@@ -25,13 +25,13 @@ export const rusVers = {
             fPigeon: `Голубь Павлин`,
             oPigeon: `Старая Немецкая Чайка`,
             SourceJPigeon: <a href="https://featuredcreature.com/meet-the-fancy-pigeons-that-rock-parkas-jacobin-pigeons/" 
-            target="_blank">Брук, 2014</a>,
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Брук, 2014</a>,
             SourceCPigeon: <a href="https://aerialokapi.wordpress.com/tag/pigeon/" 
-            target="_blank">Аманда, 2010</a>,
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Аманда, 2010</a>,
             SourceFPigeon: <a href="https://agronomu.com/bok/4071-kak-razvodit-golubey-pavlinov-v-domashnih-usloviyah.html" 
-            target="_blank">Agronomu, Дата Неизвестна</a>,
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Agronomu, Дата Неизвестна</a>,
             SourceOPigeon: <a href="http://nationalpigeonassociation.org/championship-show-reports-results-2015-2016" 
-            target="_blank">Национальная Голубиная Ассоциация, 2015</a>
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Национальная Голубиная Ассоциация, 2015</a>
         }
     },
 
@@ -263,13 +263,13 @@ export const engVers = {
             fPigeon: `Fantail Pigeon`,
             oPigeon: `Old German Owl Pigeon`,
             SourceJPigeon: <a href="https://featuredcreature.com/meet-the-fancy-pigeons-that-rock-parkas-jacobin-pigeons/" 
-            target="_blank">Brooke, 2014</a>,
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Brooke, 2014</a>,
             SourceCPigeon: <a href="https://aerialokapi.wordpress.com/tag/pigeon/" 
-            target="_blank">Amanda, 2010</a>,
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Amanda, 2010</a>,
             SourceFPigeon: <a href="https://agronomu.com/bok/4071-kak-razvodit-golubey-pavlinov-v-domashnih-usloviyah.html" 
-            target="_blank">Agronomu, n.d.</a>,
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>Agronomu, n.d.</a>,
             SourceOPigeon: <a href="http://nationalpigeonassociation.org/championship-show-reports-results-2015-2016" 
-            target="_blank">National Pigeon Association, 2015</a>
+            target="_blank" style={{color: 'floralwhite', textDecoration: 'none'}}>National Pigeon Association, 2015</a>
         }
     },
 

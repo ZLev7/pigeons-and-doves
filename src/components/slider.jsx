@@ -1,6 +1,9 @@
 import React from 'react';
+import { styles } from '../styles/styles';
+import { mapStateToProps, mapDispatchToProps } from '../store/store';
+import { connect } from 'react-redux';
 
-export class Slider extends React.Component {
+class Slider extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -36,34 +39,40 @@ export class Slider extends React.Component {
         const params = this.props.params;
         const num = this.state.slideNum;
         return(
-            <div>
-                <div>
-                    <button onClick={this.prevSlide}>
-                        &#10094;
-                    </button>
-                        <figure>
-                            <img src={params[num].path} 
-                            style={{width: 400, height: 300}}/>
-                            <figcaption>
-                            {params[num].figcaption}<br />
-                            {params[num].source}
-                            </figcaption>
-                        </figure>
+            <styles.Slider>
+                <styles.Back onClick={this.prevSlide}
+                theme={this.props.theme.dropdown}>
+                    &#10094;
+                </styles.Back>
+                    <styles.SliderFigure>
+                        <styles.SliderImg src={params[num].path} 
+                        theme={this.props.theme.dropdown}/>
+                        <styles.SliderFigCapture>
+                        {params[num].figcaption}<br />
+                        {params[num].source}
+                        </styles.SliderFigCapture>
+                    </styles.SliderFigure>
+                    <styles.Dots>
                         {params.map((i, index) => {
                             if(index === num){
-                                return <button id={index.toString()} 
+                                return <styles.Dot id={index.toString()} 
                                     onClick={() => this.setState({slideNum: index})} key={index} 
-                                    style={{background:'cornflowerblue'}}/>
-
+                                    primary="true"
+                                    theme={this.props.theme.dropdown}/>
                             }
-                            return <button id={index.toString()} 
-                            onClick={() => this.setState({slideNum: index})} key={index}/>;
+                            return <styles.Dot id={index.toString()} 
+                            onClick={() => this.setState({slideNum: index})} key={index}
+                            primary="false"
+                            theme={this.props.theme.dropdown}/>;
                         })}
-                    <button onClick={this.nextSlide}>
-                        &#10095;
-                    </button>
-                </div>
-            </div>
+                    </styles.Dots>
+                <styles.Next onClick={this.nextSlide}
+                theme={this.props.theme.dropdown}>
+                    &#10095;
+                </styles.Next>
+            </styles.Slider>
         )
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Slider);

@@ -1,7 +1,8 @@
 import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../store/store';
 import { connect } from 'react-redux';
-import { Slider } from './slider';
+import Slider from './slider';
+import { styles } from '../styles/styles';
 
 class BreedsOfPigeons extends React.Component {
     constructor(props){
@@ -40,14 +41,13 @@ class BreedsOfPigeons extends React.Component {
 
         ]
         return(
-            <div>
-                <h1 style={{color: this.props.theme.body.color}}>{title}</h1>
+            <styles.Article>
+                <h1>{title}</h1>
                 <p>
                     {text}
                 </p>
-                {slider.SourceJPigeon}
                 <Slider params={sliderArr} />
-            </div>
+            </styles.Article>
         )
     }
 }

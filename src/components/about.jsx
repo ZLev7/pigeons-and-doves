@@ -2,6 +2,7 @@ import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../store/store';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { styles } from '../styles/styles';
 
 class About extends React.Component {
     constructor(props){
@@ -13,10 +14,10 @@ class About extends React.Component {
     render(){
         const { title, note, me } = this.props.language.about;
         return(
-            <div>
+            <styles.Article>
                 <h1>{this.props.language.about.title}</h1>
-                <div style={{display: 'flex'}}>
-                    <div>
+                <styles.AboutContainer>
+                    <styles.Aside>
                         <h2>
                             {note.title}
                         </h2>
@@ -24,21 +25,24 @@ class About extends React.Component {
                             {note.text}
                         </p>
                         <ul>
-                            <li><Link to="/Content/Pigeon_Or_Dove">{note.link1}</Link></li>
-                            <li><Link to="/Content/Breeds_Of_Pigeons">{note.link2}</Link></li>
-                            <li><Link to="/Content/Doves_As_Pets">{note.link3}</Link></li>
+                            <li><styles.IntextLink to="/Content/Pigeon_Or_Dove" 
+                            theme={this.props.theme.dropdown}>{note.link1}</styles.IntextLink></li>
+                            <li><styles.IntextLink to="/Content/Breeds_Of_Pigeons" 
+                            theme={this.props.theme.dropdown}>{note.link2}</styles.IntextLink></li>
+                            <li><styles.IntextLink to="/Content/Doves_As_Pets" 
+                            theme={this.props.theme.dropdown}>{note.link3}</styles.IntextLink></li>
                         </ul>
-                    </div>
-                    <aside>
+                    </styles.Aside>
+                    <styles.Aside>
                         <h2>
                             {me.title}
                         </h2>
                         <p>
                             {me.text}
                         </p>
-                    </aside>
-                </div>
-            </div>
+                    </styles.Aside>
+                </styles.AboutContainer>
+            </styles.Article>
         )
     }
 }
