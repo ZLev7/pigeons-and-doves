@@ -9,7 +9,7 @@ export const styles = {
     `,
 
     Content: styled.div`
-        width: 940px;
+        min-width: 940px;
         margin: 0 auto;
         font-family: Arial;
         display: flex;
