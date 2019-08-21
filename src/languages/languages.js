@@ -161,6 +161,8 @@ export const rusVers = {
 
     none: {
         title: 'Ошибка 404',
+        text: `Запрашиваемая страница не найденаю Пожалуйста прверьте
+        адрес который вы ввели`,
     },
 
     // search section
@@ -402,6 +404,8 @@ export const engVers = {
 
     none: {
         title: 'Error 404',
+        text: `The requested page was not found. Please check
+        the address you entered`,
     },
 
     // search section 

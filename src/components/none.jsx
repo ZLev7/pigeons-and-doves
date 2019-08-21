@@ -1,6 +1,7 @@
 import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../store/store';
 import { connect } from 'react-redux';
+import { styles } from '../styles/styles';
 
 class None extends React.Component {
     constructor(props){
@@ -11,9 +12,12 @@ class None extends React.Component {
     }
     render(){
         return(
-            <div>
+            <styles.Article>
                 <h1>{this.props.language.none.title}</h1>
-            </div>
+                <p>
+                    {this.props.language.none.text}
+                </p>
+            </styles.Article>
         )
     }
 }
