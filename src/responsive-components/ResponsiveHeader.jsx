@@ -34,7 +34,7 @@ class ResponsiveHeader extends React.Component{
     })
     render(){
         return(
-            <div>
+            <styles.ResponsiveHeader>
                 <div style={{display: 'flex'}}>
                     <styles.ResponsiveMenu onClick={this.hideMenu}>
                         <styles.ResponsiveMenuParts></styles.ResponsiveMenuParts>
@@ -53,7 +53,7 @@ class ResponsiveHeader extends React.Component{
                 {this.state.showSearch === true ? <ResponsiveSearchBar 
                 changePath={this.props.changePath} active={this.props.active} 
                 hideSearch={this.hideSearch}/> : null}
-            </div>
+            </styles.ResponsiveHeader>
         )
     }
 }

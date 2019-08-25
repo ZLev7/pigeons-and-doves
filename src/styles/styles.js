@@ -447,6 +447,10 @@ export const styles = {
         width: 49%;
     `,
 
+    ResponsiveHeader: styled.header`
+        width: 100vh;
+    `,
+
     ResponsiveMenu: styled.div`
         display: flex;
         flex-direction: column;
@@ -459,7 +463,7 @@ export const styles = {
     `,
 
     ResponsiveMenuParts: styled.div`
-        width: 30px;
+        width: 75%;
         height: 5px;
         background: floralwhite;
         &:first-child{
