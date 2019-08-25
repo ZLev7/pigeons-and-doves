@@ -450,15 +450,23 @@ export const styles = {
     ResponsiveMenu: styled.div`
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        background: cornflowerblue;
+        margin: 5px;
     `,
 
     ResponsiveMenuParts: styled.div`
-        width: 45px;
+        width: 30px;
         height: 5px;
-        background: black;
+        background: floralwhite;
+        &:first-child{
+            margin-bottom: 7px;
+        }
+        &:last-child{
+            margin-top: 7px;
+        }
     `,
 }
