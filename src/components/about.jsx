@@ -12,7 +12,7 @@ class About extends React.Component {
         window.scrollTo(0,0);
     }
     render(){
-        const { title, note, me } = this.props.language.about;
+        const { note, me } = this.props.language.about;
         return(
             <styles.Article>
                 <h1>{this.props.language.about.title}</h1>

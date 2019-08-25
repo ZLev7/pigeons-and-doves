@@ -446,4 +446,19 @@ export const styles = {
     Aside: styled.aside`
         width: 49%;
     `,
+
+    ResponsiveMenu: styled.div`
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    `,
+
+    ResponsiveMenuParts: styled.div`
+        width: 45px;
+        height: 5px;
+        background: black;
+    `,
 }

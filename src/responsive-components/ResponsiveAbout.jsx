@@ -11,10 +11,34 @@ class ResponsiveAbout extends React.Component {
         window.scrollTo(0,0);
     }
     render(){
+        const { note, me } = this.props.language.about;
         return(
-            <styles.Article>
-                <h1>About Page</h1>
-            </styles.Article>
+            <div>
+                <div>
+                    <h2>
+                        {note.title}
+                    </h2>
+                    <p>
+                        {note.text}
+                    </p>
+                    <ul>
+                        <li><styles.IntextLink to="/Content/Pigeon_Or_Dove" 
+                        theme={this.props.theme.dropdown}>{note.link1}</styles.IntextLink></li>
+                        <li><styles.IntextLink to="/Content/Breeds_Of_Pigeons" 
+                        theme={this.props.theme.dropdown}>{note.link2}</styles.IntextLink></li>
+                        <li><styles.IntextLink to="/Content/Doves_As_Pets" 
+                        theme={this.props.theme.dropdown}>{note.link3}</styles.IntextLink></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>
+                        {me.title}
+                    </h2>
+                    <p>
+                        {me.text}
+                    </p>
+                </div>
+            </div>
         )
     }
 }
