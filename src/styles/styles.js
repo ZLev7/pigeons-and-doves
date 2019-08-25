@@ -448,7 +448,7 @@ export const styles = {
     `,
 
     ResponsiveHeader: styled.header`
-        width: 100vh;
+        width: 100%;
     `,
 
     ResponsiveMenu: styled.div`
