@@ -16,6 +16,7 @@ class ResponsiveHeader extends React.Component{
     }
     hideMenu = () => this.state.showMenu === false ? this.setState((prevState, props) => {
         return({
+            showSearch: false,
             showMenu: true
         })
     }) : this.setState((prevState, props) => {
@@ -25,6 +26,7 @@ class ResponsiveHeader extends React.Component{
     })
     hideSearch = () => this.state.showSearch === false ? this.setState((prevState, props) => {
         return({
+            showMenu: false,
             showSearch: true
         })
     }) : this.setState((prevState, props) => {
@@ -34,19 +36,42 @@ class ResponsiveHeader extends React.Component{
     })
     render(){
         return(
-            <styles.ResponsiveHeader>
-                <div style={{display: 'flex'}}>
-                    <styles.ResponsiveMenu onClick={this.hideMenu}>
-                        <styles.ResponsiveMenuParts></styles.ResponsiveMenuParts>
-                        <styles.ResponsiveMenuParts></styles.ResponsiveMenuParts>
-                        <styles.ResponsiveMenuParts></styles.ResponsiveMenuParts>
+            <styles.ResponsiveHeader theme={this.props.theme.header}>
+                <styles.Head theme={this.props.theme.header}>
+                    <styles.ResponsiveMenu onClick={this.hideMenu}
+                    theme={this.props.theme.header}
+                    primary={this.state.showMenu === true
+                    ? 'true' : 'false'}>
+                        <styles.ResponsiveMenuSquare>
+                            <styles.ResponsiveMenuParts 
+                            theme={this.props.theme.header}
+                            primary={this.state.showMenu === true
+                            ? 'true' : 'false'}>
+                            </styles.ResponsiveMenuParts>
+                            <styles.ResponsiveMenuParts 
+                            theme={this.props.theme.header}
+                            primary={this.state.showMenu === true
+                            ? 'true' : 'false'}>
+                            </styles.ResponsiveMenuParts>
+                            <styles.ResponsiveMenuParts 
+                            theme={this.props.theme.header}
+                            primary={this.state.showMenu === true
+                            ? 'true' : 'false'}>
+                            </styles.ResponsiveMenuParts>
+                        </styles.ResponsiveMenuSquare>
                     </styles.ResponsiveMenu>
                     <img src="/images/pigeon_PNG3420.png" alt={this.props.language.logoAlt} 
-                    style={{width: 45, margin: 'auto'}}/>
-                    <div onClick={this.hideSearch} style={{margin: '0px 0px 0px auto'}}>
-                        S
-                    </div>
-                </div>
+                    style={{height: 40}}/>
+                    <styles.SearchContainer
+                    theme={this.props.theme.header}
+                    primary={this.state.showSearch === true
+                    ? 'true' : 'false'}>
+                        <styles.SearchIcon icon="search" onClick={this.hideSearch}
+                        theme={this.props.theme.header}
+                        primary={this.state.showSearch === true
+                        ? 'true' : 'false'} />
+                    </styles.SearchContainer>
+                </styles.Head>
                 {this.state.showMenu === true ? <ResponsiveNav 
                 changePath={this.props.changePath} active={this.props.active} 
                 hideMenu={this.hideMenu}/> : null}

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
 import { mapStateToProps, mapDispatchToProps } from '../store/store';
 import { connect } from 'react-redux';
@@ -15,33 +14,38 @@ class ResponsiveNav extends React.Component {
         const { home, content, themes, languages, about} = this.props.language.buttons;
         console.log(this.props.currentDropdown)
         return(
-            <div>
-                <styles.NavLink to="/Home" onClick={() => this.props.hideMenu()} style={{margin: 10}}>
+            <styles.ResponsiveNav theme={this.props.theme.header}>
+                <styles.ResponsiveNavLink to="/Home" onClick={() => this.props.hideMenu()}
+                theme={this.props.theme.header}>
                     {home}
-                </styles.NavLink>
-                <styles.NavButton onClick={() => this.props.currentDropdown === 'content' ? 
-                this.props.hideSubmenu() : this.props.showContent()} style={{margin: 10}}>
+                </styles.ResponsiveNavLink>
+                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'content' ? 
+                this.props.hideSubmenu() : this.props.showContent()}
+                theme={this.props.theme.header}>
                     {content}
-                </styles.NavButton>
+                </styles.ResponsiveNavButton>
                 {this.props.currentDropdown === 'content' ? <ResponsiveContentList 
                 changePath={this.props.changePath} active={this.props.active}
                 hideMenu={this.props.hideMenu}/> : null}
-                <styles.NavButton onClick={() => this.props.currentDropdown === 'themes' ? 
-                this.props.hideSubmenu() : this.props.showThemes()} style={{margin: 10}}>
+                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'themes' ? 
+                this.props.hideSubmenu() : this.props.showThemes()}
+                theme={this.props.theme.header}>
                     {themes}
-                </styles.NavButton>
+                </styles.ResponsiveNavButton>
                 {this.props.currentDropdown === 'themes' ? <ResponsiveThemesList 
                 hideMenu={this.props.hideMenu}/> : null}
-                <styles.NavButton onClick={() => this.props.currentDropdown === 'languages' ? 
-                this.props.hideSubmenu() : this.props.showLanguages()} style={{margin: 10}}>
+                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'languages' ? 
+                this.props.hideSubmenu() : this.props.showLanguages()}
+                theme={this.props.theme.header}>
                     {languages}
-                </styles.NavButton>
+                </styles.ResponsiveNavButton>
                 {this.props.currentDropdown === 'languages' ? <ResponsiveLanguagesList 
                 hideMenu={this.props.hideMenu}/> : null}
-                <styles.NavLink to="/About" onClick={() => this.props.hideMenu()} style={{margin: 10}}>
+                <styles.ResponsiveNavLink to="/About" onClick={() => this.props.hideMenu()}
+                theme={this.props.theme.header}>
                     {about}
-                </styles.NavLink>
-            </div>
+                </styles.ResponsiveNavLink>
+            </styles.ResponsiveNav>
         )
     }
 }

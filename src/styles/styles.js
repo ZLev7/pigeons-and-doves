@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Search } from 'styled-icons/boxicons-regular/Search';
 
 export const styles = {
 
@@ -448,29 +449,130 @@ export const styles = {
     `,
 
     ResponsiveHeader: styled.header`
-        width: 100%;
+        position: relative;
     `,
 
+    Head: styled.div`
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: ${(props) => props.theme.background};
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    `,
     ResponsiveMenu: styled.div`
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 40px;
         height: 40px;
-        background: cornflowerblue;
-        margin: 5px;
+        background: ${(props) => props.primary === 'true' ? props.theme.color :
+        props.theme.background};
+        border-radius: 5px;
+        margin-left: 5px;
+    `,
+
+    ResponsiveMenuSquare: styled.div`
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     `,
 
     ResponsiveMenuParts: styled.div`
-        width: 75%;
+        width: 100%;
         height: 5px;
-        background: floralwhite;
+        border-radius: 5px;
+        background: ${(props) => props.primary === 'true' ? props.theme.background :
+        props.theme.color};
+        margin 0 auto;
+    `,
+
+    SearchContainer: styled.div`
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        margin-right: 5px;
+        justify-content: center;
+        align-items: center;
+        background: ${(props) => props.primary === 'true' ? props.theme.color :
+        props.theme.background};
+    `,
+
+    SearchIcon: styled(Search)`
+        color: ${(props) => props.primary === 'true' ? props.theme.background :
+        props.theme.color};
+        width: 40px;
+    `,
+
+    ResponsiveNav: styled.nav`
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        top: 50px;
+        background: ${(props) => props.theme.background};
+    `,
+
+    ResponsiveNavLink: styled(Link)`
+        text-decoration: none;
+        background: ${(props) => props.primary === 'true' ? props.theme.activeBg : 
+        'transparent'};
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 500;
+        font-family: Times New Roman;
+        color: ${(props) => props.primary === 'true' ? props.theme.activeColor : 
+        props.theme.color};
+        width: 16.75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         &:first-child{
-            margin-bottom: 7px;
-        }
+            border-top-left-radius: 0;
+        };
+        &:hover {
+            transition: 0.2s ease-out;
+            background: ${(props) => props.theme.activeBg};
+            color: ${(props) => props.theme.activeColor};
+        };
+    `,
+
+    ResponsiveNavButton: styled.div`
+        border: none;
+        background: ${(props) => props.primary === 'true' ? props.theme.activeBg : 
+        'transparent'};
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 500;
+        font-family: Times New Roman;
+        color: ${(props) => props.primary === 'true' ? props.theme.activeColor : 
+        props.theme.color};
+        width: 16.75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         &:last-child{
-            margin-top: 7px;
-        }
+            border-top-right-radius: 0;
+        };
+        &:hover {
+            transition: 0.2s ease-out;
+            background: ${(props) => props.theme.activeBg};
+            color: ${(props) => props.theme.activeColor};
+        };
     `,
 }
