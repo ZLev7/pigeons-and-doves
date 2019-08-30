@@ -30,13 +30,22 @@ class ResponsiveSearchBar extends React.Component {
     }
     render(){
         return(
-            <div>
-                <input 
-                placeholder={this.props.language.search.placeholder} 
-                onChange={this.search}
-                value={this.state.searchValue}
-                theme={this.props.theme.dropdown}/>
-                <div>
+            <styles.ResponsiveSearch theme={this.props.theme.header}>
+                <styles.ResponsiveSearchBar>
+                    <styles.ResponsiveInput 
+                    placeholder={this.props.language.search.placeholder} 
+                    onChange={this.search}
+                    value={this.state.searchValue}
+                    theme={this.props.theme.header}/>
+                    <styles.CloseSearchContainer
+                    theme={this.props.theme.header}
+                    primary='true'>
+                        <styles.CloseSearchButton onClick={() => this.props.hideSearch()} 
+                        theme={this.props.theme.header}
+                        primary='true'/>
+                    </styles.CloseSearchContainer>
+                </styles.ResponsiveSearchBar>
+                <styles.ResponsiveResults>
                     {this.state.results.length !== 0 ? 
                     this.state.results.map((i) => 
                         <Link to={i.path} id={i.name} key={i.name}
@@ -49,8 +58,8 @@ class ResponsiveSearchBar extends React.Component {
                             {i.name}
                         </Link>)
                     : <span key={'none'}>{this.props.language.search.error}</span>}
-                </div>
-            </div>
+                </styles.ResponsiveResults>
+            </styles.ResponsiveSearch>
         )
     }
 }

@@ -9,20 +9,26 @@ class ResponsiveLanguagesList extends React.Component{
     }
     render(){
         return(
-            <div>
-                <div onClick={() => {
+            <styles.ResponsiveDropdown theme={this.props.theme.nav}>
+                <styles.ResponsiveSwitchButton onClick={() => {
                     this.props.hideMenu();
                     this.props.useRus();
                     return this.props.hideSubmenu();}}>
-                    Русский
-                </div>
-                <div onClick={() => {
+                    <styles.ResponsiveActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.language.buttons.home === "Главная" ?
+                    'true' : 'false'}>{'Русский'.toUpperCase()}</styles.ResponsiveActiveUnit>
+                </styles.ResponsiveSwitchButton>
+                <styles.ResponsiveSwitchButton onClick={() => {
                     this.props.hideMenu();
                     this.props.useEng();
                     return this.props.hideSubmenu();}}>
-                    English
-                </div>
-            </div>
+                    <styles.ResponsiveActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.language.buttons.home === "Home" ?
+                    'true' : 'false'}>{'English'.toUpperCase()}</styles.ResponsiveActiveUnit>
+                </styles.ResponsiveSwitchButton>
+            </styles.ResponsiveDropdown>
         )
     }
 }

@@ -10,32 +10,50 @@ class ResponsiveThemesList extends React.Component{
     render(){
         const { nightBlue, summerBright, winterNoon } = this.props.language.buttons;
         return(
-            <div>
-                <styles.SwitchButton
+            <styles.ResponsiveDropdown theme={this.props.theme.nav}>
+                <styles.ResponsiveSwitchButton
                 onClick={() => {
                     this.props.hideMenu();
                     this.props.useNB();
                     return this.props.hideSubmenu();
-                }}>
-                    {nightBlue}
-                </styles.SwitchButton>
-                <styles.SwitchButton
+                }}
+                theme={this.props.theme.dropdown}>
+                    <styles.ResponsiveActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.theme.body.color === "blue" ?
+                    'true' : 'false'}>
+                        {nightBlue.toUpperCase()}
+                    </styles.ResponsiveActiveUnit>
+                </styles.ResponsiveSwitchButton>
+                <styles.ResponsiveSwitchButton
                 onClick={() => {
                     this.props.hideMenu();
                     this.props.useSB();
                     return this.props.hideSubmenu();
-                }}>
-                    {summerBright}
-                </styles.SwitchButton>
-                <styles.SwitchButton
+                }}
+                theme={this.props.theme.dropdown}>
+                    <styles.ResponsiveActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.theme.body.color === "orange" ?
+                    'true' : 'false'}>
+                        {summerBright.toUpperCase()}
+                    </styles.ResponsiveActiveUnit>
+                </styles.ResponsiveSwitchButton>
+                <styles.ResponsiveSwitchButton
                 onClick={() => {
                     this.props.hideMenu();
                     this.props.useWN();
                     return this.props.hideSubmenu();
-                }}>
-                    {winterNoon}
-                </styles.SwitchButton>
-            </div>
+                }}
+                theme={this.props.theme.dropdown}>
+                    <styles.ResponsiveActiveUnit
+                    theme={this.props.theme.dropdown}
+                    primary={this.props.theme.body.color === "cornflowerblue" ?
+                    'true' : 'false'}>
+                        {winterNoon.toUpperCase()}
+                    </styles.ResponsiveActiveUnit>
+                </styles.ResponsiveSwitchButton>
+            </styles.ResponsiveDropdown>
         )
     }
 }

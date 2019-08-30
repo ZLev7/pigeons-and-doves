@@ -66,7 +66,7 @@ class ResponsiveHeader extends React.Component{
                     theme={this.props.theme.header}
                     primary={this.state.showSearch === true
                     ? 'true' : 'false'}>
-                        <styles.SearchIcon icon="search" onClick={this.hideSearch}
+                        <styles.SearchIcon onClick={this.hideSearch}
                         theme={this.props.theme.header}
                         primary={this.state.showSearch === true
                         ? 'true' : 'false'} />

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Search } from 'styled-icons/boxicons-regular/Search';
+import { Close } from 'styled-icons/material/Close';
 
 export const styles = {
 
@@ -519,6 +520,7 @@ export const styles = {
         align-items: center;
         flex-direction: column;
         top: 50px;
+        z-index: 999;
         background: ${(props) => props.theme.background};
     `,
 
@@ -526,53 +528,130 @@ export const styles = {
         text-decoration: none;
         background: ${(props) => props.primary === 'true' ? props.theme.activeBg : 
         'transparent'};
-        cursor: pointer;
         font-size: 25px;
         font-weight: 500;
         font-family: Times New Roman;
         color: ${(props) => props.primary === 'true' ? props.theme.activeColor : 
         props.theme.color};
-        width: 16.75%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 30px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        &:first-child{
-            border-top-left-radius: 0;
-        };
-        &:hover {
-            transition: 0.2s ease-out;
-            background: ${(props) => props.theme.activeBg};
-            color: ${(props) => props.theme.activeColor};
-        };
+        height: 40px;
     `,
 
     ResponsiveNavButton: styled.div`
-        border: none;
         background: ${(props) => props.primary === 'true' ? props.theme.activeBg : 
         'transparent'};
-        cursor: pointer;
         font-size: 25px;
         font-weight: 500;
         font-family: Times New Roman;
         color: ${(props) => props.primary === 'true' ? props.theme.activeColor : 
         props.theme.color};
-        width: 16.75%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 30px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        &:last-child{
-            border-top-right-radius: 0;
-        };
-        &:hover {
-            transition: 0.2s ease-out;
-            background: ${(props) => props.theme.activeBg};
-            color: ${(props) => props.theme.activeColor};
-        };
+        height: 40px;
+    `,
+
+    ResponsiveDropdown: styled.div`
+        width: 100%;
+        background: ${(props) => props.theme.activeBg};
+        color: ${(props) => props.theme.activeColor};
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: -5px;
+        padding: 0 0 10px 0;
+    `,
+
+    ResponsiveActiveUnit: styled.div`
+        margin: auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 25px;
+        padding: 5px 8px 4px 8px;
+        background: ${(props) => props.primary === 'true' ? 
+        props.theme.color : props.theme.background};
+        color: ${(props) => props.primary === 'true' ? 
+        props.theme.background : props.theme.color};
+        border-radius: 5px;
+    `,
+
+    ResponsiveContentLink: styled(Link)`
+        margin: auto;
+        font-family: Times New Roman;
+        color: ${(props) => props.theme.color};
+        text-decoration: none;
+    `, 
+
+    ResponsiveSwitchButton: styled.div`
+        margin: auto;
+        font-family: Times New Roman;
+        color: ${(props) => props.theme.color};
+        text-decoration: none;
+    `, 
+
+    ResponsiveSearch: styled.div`
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        background: ${(props) => props.theme.background};
+    `,
+
+    ResponsiveSearchBar: styled.div`
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+    `,
+
+    ResponsiveInput: styled.input`
+        flex-grow: 1;
+        margin: 0 5px;
+        height: 38px;
+        border: none;
+        padding-left: 9px;
+        padding-right: 9px;
+        border-radius: 5px;
+        background: ${(props) => props.theme.color};
+        color: ${(props) => props.theme.background};
+        font-size: 20px;
+        &::placeholder {
+            color: ${(props) => props.theme.background};
+            margin: 5px;
+            font-size: 20px;
+        }
+    `,
+
+    ResponsiveResults: styled.div`
+        width: 100%;
+    `,
+    
+    CloseSearchContainer: styled.div`
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        margin-right: 5px;
+        justify-content: center;
+        align-items: center;
+        background: ${(props) => props.primary === 'true' ? props.theme.color :
+        props.theme.background};
+    `,
+
+    CloseSearchButton: styled(Close)`
+        color: ${(props) => props.primary === 'true' ? props.theme.background :
+        props.theme.color};
+        width: 40px;
     `,
 }

@@ -15,36 +15,101 @@ class ResponsiveNav extends React.Component {
         console.log(this.props.currentDropdown)
         return(
             <styles.ResponsiveNav theme={this.props.theme.header}>
-                <styles.ResponsiveNavLink to="/Home" onClick={() => this.props.hideMenu()}
-                theme={this.props.theme.header}>
-                    {home}
+                
+                <styles.ResponsiveNavLink to="/Home" onClick={() => {
+                    
+                this.props.changePath("/Home")
+
+                this.props.hideSubmenu()
+                
+                return this.props.hideMenu()}}
+                
+                theme={this.props.theme.nav}
+                
+                primary={this.props.active === "/Home" || 
+                
+                this.props.active === "/" ?
+                
+                'true' : 'false'}>
+                    
+                    {home.toUpperCase()}
+                    
                 </styles.ResponsiveNavLink>
-                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'content' ? 
+                
+                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'content' ?
+                 
                 this.props.hideSubmenu() : this.props.showContent()}
-                theme={this.props.theme.header}>
-                    {content}
+                
+                theme={this.props.theme.nav}
+                
+                primary={this.props.currentDropdown === 'content'
+                
+                ? 'true' : 'false'}>
+                    
+                    {content.toUpperCase()}
+                    
                 </styles.ResponsiveNavButton>
-                {this.props.currentDropdown === 'content' ? <ResponsiveContentList 
+                
+                {this.props.currentDropdown === 'content' ? <ResponsiveContentList
+                 
                 changePath={this.props.changePath} active={this.props.active}
+                
                 hideMenu={this.props.hideMenu}/> : null}
-                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'themes' ? 
+                
+                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'themes' ?
+                 
                 this.props.hideSubmenu() : this.props.showThemes()}
-                theme={this.props.theme.header}>
-                    {themes}
+                
+                theme={this.props.theme.nav}
+                
+                primary={this.props.currentDropdown === 'themes'
+                
+                ? 'true' : 'false'}>
+                    
+                    {themes.toUpperCase()}
+                    
                 </styles.ResponsiveNavButton>
-                {this.props.currentDropdown === 'themes' ? <ResponsiveThemesList 
+                
+                {this.props.currentDropdown === 'themes' ? <ResponsiveThemesList
+                 
                 hideMenu={this.props.hideMenu}/> : null}
-                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'languages' ? 
+                
+                <styles.ResponsiveNavButton onClick={() => this.props.currentDropdown === 'languages' ?
+                 
                 this.props.hideSubmenu() : this.props.showLanguages()}
-                theme={this.props.theme.header}>
-                    {languages}
+                
+                theme={this.props.theme.nav}
+                
+                primary={this.props.currentDropdown === 'languages'
+                
+                ? 'true' : 'false'}>
+                    
+                    {languages.toUpperCase()}
+                    
                 </styles.ResponsiveNavButton>
-                {this.props.currentDropdown === 'languages' ? <ResponsiveLanguagesList 
+                
+                {this.props.currentDropdown === 'languages' ? <ResponsiveLanguagesList
+                 
                 hideMenu={this.props.hideMenu}/> : null}
-                <styles.ResponsiveNavLink to="/About" onClick={() => this.props.hideMenu()}
-                theme={this.props.theme.header}>
-                    {about}
+                
+                <styles.ResponsiveNavLink to="/About" onClick={() => {
+                    
+                this.props.changePath("/About")
+
+                this.props.hideSubmenu()
+                
+                return this.props.hideMenu()}}
+                
+                theme={this.props.theme.nav}
+                
+                primary={this.props.active === "/About" ?
+                
+                 'true' : 'false'}>
+                     
+                    {about.toUpperCase()}
+                    
                 </styles.ResponsiveNavLink>
+                
             </styles.ResponsiveNav>
         )
     }
