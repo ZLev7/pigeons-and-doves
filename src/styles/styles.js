@@ -635,6 +635,20 @@ export const styles = {
 
     ResponsiveResults: styled.div`
         width: 100%;
+        height: auto;
+        position: fixed;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        top: 50px;
+        z-index: 999;
+        font-size: 25px;
+        font-weight: 500;
+        font-family: Times New Roman;
+        background: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
     `,
     
     CloseSearchContainer: styled.div`

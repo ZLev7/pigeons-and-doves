@@ -45,18 +45,20 @@ class ResponsiveSearchBar extends React.Component {
                         primary='true'/>
                     </styles.CloseSearchContainer>
                 </styles.ResponsiveSearchBar>
-                <styles.ResponsiveResults>
+                <styles.ResponsiveResults theme={this.props.theme.header}>
                     {this.state.results.length !== 0 ? 
                     this.state.results.map((i) => 
-                        <Link to={i.path} id={i.name} key={i.name}
-                        theme={this.props.theme.dropdown}
+                        <styles.ResponsiveNavLink to={i.path} id={i.name} key={i.name}
                         onClick={() => {
                             this.props.changePath(i.path);
                             this.props.hideSearch();
                             return this.props.hideSubmenu();
-                        }}>
+                        }}
+                        theme={this.props.theme.nav}
+                        primary={this.props.active === i.path ?
+                        'true' : 'false'}>
                             {i.name}
-                        </Link>)
+                        </styles.ResponsiveNavLink>)
                     : <span key={'none'}>{this.props.language.search.error}</span>}
                 </styles.ResponsiveResults>
             </styles.ResponsiveSearch>
