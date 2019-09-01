@@ -453,7 +453,7 @@ export const styles = {
     ResponsiveApp: styled.div`
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        min-height: 100%;
     `,
     
     ResponsiveAppContainer: styled.div`
@@ -682,8 +682,8 @@ export const styles = {
     `,
 
     ResponsiveArticle: styled.article`
-        padding: 50px 2% 0 2%;
-        width: 96%;
+        padding: 50px 4% 0 4%;
+        width: 92%;
     `,
 
     ResponsiveFooterSection: styled.footer`
