@@ -24,25 +24,27 @@ export class MobileApp extends React.Component {
     }
   render(){
     return(
-        <div>
-            <ResponsiveHeader changePath={this.changePath} active={this.state.active}/>
-            <Switch>
-              <Route exact path="/Home" render={(props) =>
-              <ResponsiveHome {...props} changePath={this.changePath} active={this.state.active} />}/>
-              <Route exact path="/Content/Breeds_Of_Pigeons" 
-              component={ResponsiveBreedsOfPigeons}/>
-              <Route exact path="/Content/Doves_As_Pets" 
-              component={ResponsiveDovesAsPets}/>
-              <Route exact path="/Content/Pigeon_Or_Dove" 
-              component={ResponsivePigeonOrDove}/>
-              <Route exact path="/About" component={ResponsiveAbout}/>
-              <Route exact path="/">
-                <Redirect to="/Home" />
-              </Route>
-              <Route component={ResponsiveNone} />
-            </Switch>
+        <styles.ResponsiveApp>
+            <styles.ResponsiveAppContainer>
+              <ResponsiveHeader changePath={this.changePath} active={this.state.active}/>
+              <Switch>
+                <Route exact path="/Home" render={(props) =>
+                <ResponsiveHome {...props} changePath={this.changePath} active={this.state.active} />}/>
+                <Route exact path="/Content/Breeds_Of_Pigeons" 
+                component={ResponsiveBreedsOfPigeons}/>
+                <Route exact path="/Content/Doves_As_Pets" 
+                component={ResponsiveDovesAsPets}/>
+                <Route exact path="/Content/Pigeon_Or_Dove" 
+                component={ResponsivePigeonOrDove}/>
+                <Route exact path="/About" component={ResponsiveAbout}/>
+                <Route exact path="/">
+                  <Redirect to="/Home" />
+                </Route>
+                <Route component={ResponsiveNone} />
+              </Switch>
+            </styles.ResponsiveAppContainer>
             <ResponsiveFooter />
-        </div>
+        </styles.ResponsiveApp>
     )
   }
 }

@@ -12,12 +12,12 @@ class ResponsiveNone extends React.Component {
     }
     render(){
         return(
-            <styles.Article>
+            <styles.ResponsiveArticle>
                 <h1>{this.props.language.none.title}</h1>
                 <p>
                     {this.props.language.none.text}
                 </p>
-            </styles.Article>
+            </styles.ResponsiveArticle>
         )
     }
 }

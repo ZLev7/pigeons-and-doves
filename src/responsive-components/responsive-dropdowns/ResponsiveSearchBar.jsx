@@ -57,9 +57,9 @@ class ResponsiveSearchBar extends React.Component {
                         theme={this.props.theme.nav}
                         primary={this.props.active === i.path ?
                         'true' : 'false'}>
-                            {i.name}
+                            {i.name.toUpperCase()}
                         </styles.ResponsiveNavLink>)
-                    : <span key={'none'}>{this.props.language.search.error}</span>}
+                    : <span key={'none'}>{this.props.language.search.error.toUpperCase()}</span>}
                 </styles.ResponsiveResults>
             </styles.ResponsiveSearch>
         )

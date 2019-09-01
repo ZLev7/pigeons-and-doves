@@ -16,7 +16,7 @@ class ResponsivePigeonOrDove extends React.Component {
             author, rPigeon, cDove, sDove, nbc,
             altPigeon, altCDove, altSDove } = this.props.language.pigeonOrDove.table;
         return(
-            <styles.Article>
+            <styles.ResponsiveArticle>
                 <h1>{title}</h1>
                 <p>
                     {text1}
@@ -110,7 +110,7 @@ class ResponsivePigeonOrDove extends React.Component {
                         </tr>
                     </tbody>
                 </styles.Table>
-            </styles.Article>
+            </styles.ResponsiveArticle>
         )
     }
 }

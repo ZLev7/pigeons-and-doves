@@ -41,13 +41,13 @@ class ResponsiveBreedsOfPigeons extends React.Component {
 
         ]
         return(
-            <styles.Article>
+            <styles.ResponsiveArticle>
                 <h1>{title}</h1>
                 <p>
                     {text}
                 </p>
                 <ResponsiveSlider params={sliderArr} />
-            </styles.Article>
+            </styles.ResponsiveArticle>
         )
     }
 }

@@ -13,7 +13,7 @@ class ResponsiveHome extends React.Component {
     render(){
         const { title, content } = this.props.language.home
         return(
-            <styles.Article>
+            <styles.ResponsiveArticle>
                 <h1>{title}</h1>
                 <p>{content.text1}</p>
                 <p>{content.text2}</p>
@@ -58,7 +58,7 @@ class ResponsiveHome extends React.Component {
                         return this.props.hideSubmenu()
                     }} theme={this.props.theme.dropdown}>{content.point3}</styles.IntextLink></li>
                 </ol>
-            </styles.Article>
+            </styles.ResponsiveArticle>
         )
     }
 }

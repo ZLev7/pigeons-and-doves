@@ -154,6 +154,7 @@ export const styles = {
             font-size: 20px;
             color: ${(props) => props.theme.color};
         }
+        outline: none;
     `,
 
     SearchResults: styled.div`
@@ -300,19 +301,19 @@ export const styles = {
     `,
 
     Table: styled.table`
-        border: 2px solid ${(props) => props.theme.color};
+        border: 3px solid ${(props) => props.theme.color};
         border-collapse: collapse;
         width: 100%;
     `,
 
     TableCell: styled.td`
-        border: 2px solid ${(props) => props.theme.color};
+        border: 3px solid ${(props) => props.theme.color};
         height: 240px;
         text-align: center;
     `,
 
     TableImgContainer: styled.td`
-        border: 2px solid ${(props) => props.theme.color};
+        border: 3px solid ${(props) => props.theme.color};
         width: 300px;
         padding: 0;
         padding-bottom: 3px;
@@ -320,7 +321,7 @@ export const styles = {
     `,
 
     TableHead: styled.td`
-        border: 2px solid ${(props) => props.theme.color};
+        border: 3px solid ${(props) => props.theme.color};
         height: 40px;
         text-align: center;
     `,
@@ -447,6 +448,16 @@ export const styles = {
 
     Aside: styled.aside`
         width: 49%;
+    `,
+
+    ResponsiveApp: styled.div`
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    `,
+    
+    ResponsiveAppContainer: styled.div`
+        flex-grow: 1;
     `,
 
     ResponsiveHeader: styled.header`
@@ -631,6 +642,7 @@ export const styles = {
             margin: 5px;
             font-size: 20px;
         }
+        outline: none;
     `,
 
     ResponsiveResults: styled.div`
@@ -644,7 +656,7 @@ export const styles = {
         flex-direction: column;
         top: 50px;
         z-index: 999;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 500;
         font-family: Times New Roman;
         background: ${(props) => props.theme.background};
@@ -667,5 +679,27 @@ export const styles = {
         color: ${(props) => props.primary === 'true' ? props.theme.background :
         props.theme.color};
         width: 40px;
+    `,
+
+    ResponsiveArticle: styled.article`
+        padding: 50px 2% 0 2%;
+        width: 96%;
+    `,
+
+    ResponsiveFooterSection: styled.footer`
+        width: 100%;
+        height: 50px;
+        background: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 2px;
+    `,
+
+    FooterPars: styled.p`
+        margin: 0;
     `,
 }

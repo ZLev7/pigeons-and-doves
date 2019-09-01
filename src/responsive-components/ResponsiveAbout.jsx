@@ -13,7 +13,7 @@ class ResponsiveAbout extends React.Component {
     render(){
         const { note, me } = this.props.language.about;
         return(
-            <div>
+            <styles.ResponsiveArticle>
                 <div>
                     <h2>
                         {note.title}
@@ -38,7 +38,7 @@ class ResponsiveAbout extends React.Component {
                         {me.text}
                     </p>
                 </div>
-            </div>
+            </styles.ResponsiveArticle>
         )
     }
 }
