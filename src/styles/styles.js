@@ -682,8 +682,8 @@ export const styles = {
     `,
 
     ResponsiveArticle: styled.article`
-        padding: 50px 4% 0 4%;
-        width: 92%;
+        padding: 50px 6% 0 6%;
+        width: 88%;
     `,
 
     ResponsiveFooterSection: styled.footer`
