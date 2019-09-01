@@ -15,9 +15,9 @@ class ResponsiveAbout extends React.Component {
         return(
             <styles.ResponsiveArticle>
                 <div>
-                    <h2>
+                    <styles.IntextH1 theme={this.props.theme.dropdown}>
                         {note.title}
-                    </h2>
+                    </styles.IntextH1>
                     <p>
                         {note.text}
                     </p>
@@ -31,11 +31,11 @@ class ResponsiveAbout extends React.Component {
                     </ul>
                 </div>
                 <div>
-                    <h2>
+                    <styles.IntextH1 theme={this.props.theme.dropdown}>
                         {me.title}
-                    </h2>
+                    </styles.IntextH1>
                     <p>
-                        {me.text}
+                        {me.text}.
                     </p>
                 </div>
             </styles.ResponsiveArticle>

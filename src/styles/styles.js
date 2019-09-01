@@ -458,6 +458,8 @@ export const styles = {
     
     ResponsiveAppContainer: styled.div`
         flex-grow: 1;
+        color: ${(props) => props.theme.color};
+        background: ${(props) => props.theme.background};
     `,
 
     ResponsiveHeader: styled.header`
@@ -702,5 +704,11 @@ export const styles = {
 
     FooterPars: styled.p`
         margin: 0;
+    `,
+    
+    IntextH1: styled.h1`
+        font-size: 20px;
+        font-weight: 500;
+        color: ${(props) => props.theme.color};
     `,
 }

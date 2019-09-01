@@ -25,7 +25,7 @@ export class MobileApp extends React.Component {
   render(){
     return(
         <styles.ResponsiveApp>
-            <styles.ResponsiveAppContainer>
+            <styles.ResponsiveAppContainer theme={this.props.theme.content}>
               <ResponsiveHeader changePath={this.changePath} active={this.state.active}/>
               <Switch>
                 <Route exact path="/Home" render={(props) =>

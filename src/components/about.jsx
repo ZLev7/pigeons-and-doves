@@ -38,7 +38,7 @@ class About extends React.Component {
                             {me.title}
                         </h2>
                         <p>
-                            {me.text}
+                            {me.text}.
                         </p>
                     </styles.Aside>
                 </styles.AboutContainer>
