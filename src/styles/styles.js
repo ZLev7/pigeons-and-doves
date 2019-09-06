@@ -475,6 +475,7 @@ export const styles = {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 999;
     `,
     ResponsiveMenu: styled.div`
         display: flex;
