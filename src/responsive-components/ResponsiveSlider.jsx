@@ -46,10 +46,10 @@ class ResponsiveSlider extends React.Component {
     }
     touch = (e) => {
     }
-    touchEnd = (e) => {
+    touchEnd = async (e) => {
         const touchEnd = e.changedTouches[0].clientX;
         console.log(touchEnd)
-       this.setState((prevState, props) => ({
+       await this.setState((prevState, props) => ({
            touchDistance: prevState.locationXStart - touchEnd
        }))
        if(this.state.touchDistance > 60){
@@ -57,6 +57,9 @@ class ResponsiveSlider extends React.Component {
        } else if(this.state.touchDistance < -60){
             return document.getElementById('back').click()
        }
+       await this.setState((prevState, props) => ({
+            touchDistance: 0
+        }))
     }
     render(){
         const params = this.props.params;
