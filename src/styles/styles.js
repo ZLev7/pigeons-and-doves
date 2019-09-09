@@ -716,7 +716,7 @@ export const styles = {
     ResponsiveSlider: styled.div`
         width: 275px;
         display: flex;
-        height: 360px;
+        height: 340px;
         overflow-x: auto;
         border: 2px solid ${(props) => props.theme.color};
         border-radius: 10px;
@@ -726,16 +726,17 @@ export const styles = {
 
     ResponsiveSliderImg: styled.img`
         width: 275px;
-        height: 360px;
+        height: 340px;
         margin-bottom: -100px;
     `,
     ResponsiveSliderFigure: styled.figure`
         position: relative;
         width: 275px;
-        height: 360px;
+        height: 340px;
         margin: 0;
         margin-bottom: -100px;
         scroll-snap-align: start;
+        scroll-behaviour: smooth;
     `,
     ResponsiveSliderFigCapture: styled.figcaption`
         position: absolute;
