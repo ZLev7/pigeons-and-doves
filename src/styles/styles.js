@@ -712,4 +712,36 @@ export const styles = {
         font-weight: 500;
         color: ${(props) => props.theme.color};
     `,
+
+    ResponsiveSlider: styled.div`
+        width: 275px;
+        display: flex;
+        height: 360px;
+        overflow-x: auto;
+        border: 2px solid ${(props) => props.theme.color};
+        border-radius: 10px;
+        &::-webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    `,
+
+    ResponsiveSliderImg: styled.img`
+        width: 275px;
+        height: 360px;
+        margin-bottom: -100px;
+    `,
+    ResponsiveSliderFigure: styled.figure`
+        position: relative;
+        width: 275px;
+        height: 360px;
+        margin: 0;
+        margin-bottom: -100px;
+        scroll-snap-align: start;
+    `,
+    ResponsiveSliderFigCapture: styled.figcaption`
+        position: absolute;
+        bottom: 1.5%;
+        left: 1%;
+        color: floralwhite;
+    `,
+    
 }

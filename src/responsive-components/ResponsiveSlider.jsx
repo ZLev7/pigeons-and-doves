@@ -9,7 +9,8 @@ class ResponsiveSlider extends React.Component {
         this.state = {
             slideNum: 0,
             locationXStart: 0,
-            touchDistance: 0
+            touchDistance: 0,
+            dis: 0
         }
     }
 
@@ -45,6 +46,11 @@ class ResponsiveSlider extends React.Component {
        console.log('locationXStart ' + touch[0].clientX)     
     }
     touch = (e) => {
+        const dii = e.touches[0].clientX
+        this.setState((prevState, props) => ({
+            dis: prevState.locationXStart - dii
+        }))
+        console.log(this.state.dis)
     }
     touchEnd = async (e) => {
         const touchEnd = e.changedTouches[0].clientX;
@@ -52,9 +58,9 @@ class ResponsiveSlider extends React.Component {
        await this.setState((prevState, props) => ({
            touchDistance: prevState.locationXStart - touchEnd
        }))
-       if(this.state.touchDistance > 60){
+       if(this.state.touchDistance > 50){
             return document.getElementById('next').click() 
-       } else if(this.state.touchDistance < -60){
+       } else if(this.state.touchDistance < -50){
             return document.getElementById('back').click()
        }
        await this.setState((prevState, props) => ({
@@ -63,52 +69,43 @@ class ResponsiveSlider extends React.Component {
     }
     render(){
         const params = this.props.params;
-        const num = this.state.slideNum;
         return(
             <>
-                <styles.Slider 
-                    onTouchMove={this.touch}
+                <styles.ResponsiveSlider
+                    theme={this.props.theme.dropdown} 
+                    /*onTouchMove={this.touch}
                     onTouchStart={this.touchStart}
-                    onTouchEnd={this.touchEnd}>
-                    <styles.Back onClick={this.prevSlide}
+                    onTouchEnd={this.touchEnd}*/>
+                    {/* <styles.Back onClick={this.prevSlide}
                     theme={this.props.theme.dropdown}
                     id='back'>
                         &#10094;
-                    </styles.Back>
-                        <styles.SliderFigure>
-                            <styles.SliderImg src={params[num].path} 
-                            theme={this.props.theme.dropdown}/>
-                            <styles.SliderFigCapture>
-                            {params[num].figcaption}<br />
-                            {params[num].source}
-                            </styles.SliderFigCapture>
-                        </styles.SliderFigure>
-                        <styles.Dots>
-                            {params.map((i, index) => {
-                                if(index === num){
-                                    return <styles.Dot id={index.toString()} 
-                                        onClick={() => this.setState({slideNum: index})} key={index} 
-                                        primary="true"
+                    </styles.Back> */}
+                        {params.map((slider) => {
+                            return(<styles.ResponsiveSliderFigure>
+                                        <styles.ResponsiveSliderImg src={slider.path} 
                                         theme={this.props.theme.dropdown}/>
-                                }
-                                return <styles.Dot id={index.toString()} 
-                                onClick={() => this.setState({slideNum: index})} key={index}
-                                primary="false"
-                                theme={this.props.theme.dropdown}/>;
-                            })}
-                        </styles.Dots>
-                    <styles.Next onClick={this.nextSlide}
+                                        <styles.ResponsiveSliderFigCapture>
+                                        {slider.figcaption}<br />
+                                        {slider.source}
+                                        </styles.ResponsiveSliderFigCapture>
+                                    </styles.ResponsiveSliderFigure>)
+                        })}
+                    {/* <styles.Next onClick={this.nextSlide}
                     theme={this.props.theme.dropdown}
                     id='next'>
                         &#10095;
-                    </styles.Next>
-                </styles.Slider>
+                    </styles.Next> */}
+                </styles.ResponsiveSlider>
                 <p>
                     <h1>
                         {this.state.locationXStart}
                     </h1>
                     <h1>
                         {this.state.touchDistance}
+                    </h1>
+                    <h1>
+                        {this.state.dis}
                     </h1>
                 </p>
             </>
