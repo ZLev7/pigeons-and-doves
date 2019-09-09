@@ -714,26 +714,27 @@ export const styles = {
     `,
 
     ResponsiveSlider: styled.div`
-        width: 275px;
+        width: ${(props) => props.width};
         display: flex;
-        height: 340px;
+        height: ${(props) => props.height};
         overflow-x: auto;
         border: 2px solid ${(props) => props.theme.color};
         border-radius: 10px;
         &::-webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         margin: auto;
+        margin-bottom: ${(props) => props.marginBottom};
     `,
 
     ResponsiveSliderImg: styled.img`
-        width: 275px;
-        height: 340px;
+        width: ${(props) => props.width};
+        height: ${(props) => props.height};
         margin-bottom: -100px;
     `,
     ResponsiveSliderFigure: styled.figure`
         position: relative;
-        width: 275px;
-        height: 340px;
+        width: ${(props) => props.width};
+        height: ${(props) => props.height};
         margin: 0;
         margin-bottom: -100px;
         scroll-snap-align: start;
