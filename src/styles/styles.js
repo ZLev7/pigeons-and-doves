@@ -722,6 +722,7 @@ export const styles = {
         border-radius: 10px;
         &::-webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
+        margin: auto;
     `,
 
     ResponsiveSliderImg: styled.img`
