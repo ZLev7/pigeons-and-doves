@@ -722,6 +722,9 @@ export const styles = {
         border-radius: 10px;
         &::-webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         margin: auto;
         margin-bottom: ${(props) => props.marginBottom};
     `,
