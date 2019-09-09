@@ -737,6 +737,7 @@ export const styles = {
         margin-bottom: -100px;
         scroll-snap-align: start;
         scroll-behaviour: smooth;
+        scroll-snap-stop: always;
     `,
     ResponsiveSliderFigCapture: styled.figcaption`
         position: absolute;
