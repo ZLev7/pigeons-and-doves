@@ -749,7 +749,7 @@ export const styles = {
     ResponsiveSliderFigCapture: styled.figcaption`
         position: absolute;
         bottom: 1.5%;
-        left: 1%;
+        left: 2%;
         color: floralwhite;
     `,
 

@@ -12,7 +12,7 @@ class ResponsiveBreedsOfPigeons extends React.Component {
         window.scrollTo(0,0);
     }
     render(){
-        const { title, text, slider } = this.props.language.breedsOfPigeons;
+        const { title, text, slider, responsiveNote } = this.props.language.breedsOfPigeons;
         const sliderArr = [
 
             {
@@ -47,6 +47,9 @@ class ResponsiveBreedsOfPigeons extends React.Component {
                     {text}
                 </p>
                 <ResponsiveSlider params={sliderArr} />
+                <p>
+                    {responsiveNote}
+                </p>
             </styles.ResponsiveArticle>
         )
     }

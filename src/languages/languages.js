@@ -13,6 +13,7 @@ export const rusVers = {
     // breedsOfPigeons section
 
     breedsOfPigeons: {
+        responsiveNote: `*Листайте изображения свайпами`,
         title: "Породы Сизого Голубя",
         text: ` Вы можете быть удивлены, но голуби могут быть очень красивы. 
                 Существует множкство пород,
@@ -20,6 +21,7 @@ export const rusVers = {
                 На изображениях ниже показаны одни из наиболее интересных
                 с точки зрения внешнего облика голуби.`,
         slider: {
+            responsiveNote: ``,
             jPigeon: `Голубь Якобин`,
             cPigeon: `Кучерявый Голубь`,
             fPigeon: `Голубь Павлин`,
@@ -253,6 +255,7 @@ export const engVers = {
     // breedsOfPigeons section 
 
     breedsOfPigeons: {
+        responsiveNote: `*Use swipes to move images`,
         title: "Breeds of Rock Pigeon",
         text: ` You may be amazed, but Pigeons can be very beatiful. 
                 There is a lot of breeds
