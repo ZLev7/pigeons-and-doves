@@ -21,10 +21,13 @@ class ResponsiveDovesAsPets extends React.Component {
                 <p>
                     {text2}
                 </p>
-                <styles.YouTubeVideo src="https://www.youtube.com/embed/qAXoKtXLsBg" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                theme={this.props.theme.dropdown}></styles.YouTubeVideo><br />
+                    <styles.ResponsiveYouTubeVideoContainer>
+                        <styles.ResponsiveYouTubeVideo src="https://www.youtube.com/embed/qAXoKtXLsBg" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        theme={this.props.theme.dropdown}></styles.ResponsiveYouTubeVideo>
+                    </styles.ResponsiveYouTubeVideoContainer>
+                <br />
                 <styles.IntextLinka href="https://www.youtube.com/watch?v=qAXoKtXLsBg" target="_blank">
                 {source.source}{source.name}</styles.IntextLinka>
             </styles.ResponsiveArticle>

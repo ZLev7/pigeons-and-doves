@@ -734,6 +734,7 @@ export const styles = {
         height: ${(props) => props.height};
         margin-bottom: -100px;
     `,
+
     ResponsiveSliderFigure: styled.figure`
         position: relative;
         width: ${(props) => props.width};
@@ -744,11 +745,28 @@ export const styles = {
         scroll-behaviour: smooth;
         scroll-snap-stop: always;
     `,
+
     ResponsiveSliderFigCapture: styled.figcaption`
         position: absolute;
         bottom: 1.5%;
         left: 1%;
         color: floralwhite;
     `,
-    
+
+    ResponsiveYouTubeVideoContainer: styled.div`
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 75.4%;
+    `,
+
+    ResponsiveYouTubeVideo:  styled.iframe`
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid ${(props) => props.theme.color};
+        border-radius: 10px;
+    `,
 }
