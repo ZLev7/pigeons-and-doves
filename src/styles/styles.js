@@ -769,4 +769,25 @@ export const styles = {
         border: 2px solid ${(props) => props.theme.color};
         border-radius: 10px;
     `,
+
+    ResponsivePicturesContainer: styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    `,
+
+    ResponsiveHomePicture: styled.img`
+        width: 100%;
+        height: auto;
+        transition: 0.4s ease-out;
+        border: 2px solid ${(props) => props.theme.border};
+        border-radius: 5px;
+    `,
+
+    ResponsiveHomeFigure: styled.figure`
+        width: 115%;
+        height: auto;
+        margin-left: 1px;
+    `,
 }

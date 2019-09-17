@@ -29,7 +29,8 @@ class ResponsiveDovesAsPets extends React.Component {
                     </styles.ResponsiveYouTubeVideoContainer>
                 <br />
                 <styles.IntextLinka href="https://www.youtube.com/watch?v=qAXoKtXLsBg" target="_blank">
-                {source.source}{source.name}</styles.IntextLinka>
+                {source.source}{source.name}</styles.IntextLinka><br />
+                <br />
             </styles.ResponsiveArticle>
         )
     }

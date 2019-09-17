@@ -24,9 +24,9 @@ class ResponsiveHome extends React.Component {
                         this.props.changePath("/Content/Pigeon_Or_Dove")
                         return this.props.hideSubmenu()
                     }} theme={this.props.theme.dropdown}>{content.point1}</styles.IntextLink></li>
-                    <div style={{display: 'flex'}}>
-                        <styles.HomeFigure>
-                            <styles.HomePicture src="images/photo_2019-03-16_13-43-21.jpg" 
+                    <styles.ResponsivePicturesContainer style={{display: 'flex'}}>
+                        <styles.ResponsiveHomeFigure>
+                            <styles.ResponsiveHomePicture src="images/photo_2019-03-16_13-43-21.jpg" 
                             alt={content.doveAltName}
                             theme={this.props.theme.content}/>
                             <figcaption>
@@ -34,9 +34,9 @@ class ResponsiveHome extends React.Component {
                                     {content.sourceDoveAuthor}
                                 </p>
                             </figcaption>
-                        </styles.HomeFigure>
-                        <styles.HomeFigure>
-                            <styles.HomePicture src="images/14_12_Columba_livia_our_pigeon_similar.jpg" 
+                        </styles.ResponsiveHomeFigure>
+                        <styles.ResponsiveHomeFigure>
+                            <styles.ResponsiveHomePicture src="images/14_12_Columba_livia_our_pigeon_similar.jpg" 
                             alt={content.pigeonAltName}
                             theme={this.props.theme.content}/>
                             <figcaption>
@@ -45,8 +45,8 @@ class ResponsiveHome extends React.Component {
                                     target="_blank">{content.sourcePigeonAuthor}</styles.IntextLinka>
                                 </p>
                             </figcaption>
-                        </styles.HomeFigure>
-                    </div>
+                        </styles.ResponsiveHomeFigure>
+                    </styles.ResponsivePicturesContainer>
                     <li><styles.IntextLink to="/Content/Breeds_Of_Pigeons"
                     onClick={() => {
                         this.props.changePath("/Content/Breeds_Of_Pigeons")
