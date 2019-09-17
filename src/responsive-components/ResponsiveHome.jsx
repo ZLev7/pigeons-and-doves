@@ -57,7 +57,9 @@ class ResponsiveHome extends React.Component {
                         this.props.changePath("/Content/Doves_As_Pets")
                         return this.props.hideSubmenu()
                     }} theme={this.props.theme.dropdown}>{content.point3}</styles.IntextLink></li>
-                </ol>
+                </ol><br />
+                <br />
+                <br />
             </styles.ResponsiveArticle>
         )
     }

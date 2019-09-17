@@ -789,5 +789,6 @@ export const styles = {
         width: 115%;
         height: auto;
         margin-left: 1px;
+        margin-bottom: 0;
     `,
 }
