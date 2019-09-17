@@ -19,7 +19,7 @@ class ResponsiveHome extends React.Component {
                 <p>{content.text2}</p>
                 <p>{content.text3}</p>
                 <ol>
-                    <li> <styles.IntextLink to="/Content/Pigeon_Or_Dove"
+                    <li style={{marginBottom: 10}}> <styles.IntextLink to="/Content/Pigeon_Or_Dove"
                     onClick={() => {
                         this.props.changePath("/Content/Pigeon_Or_Dove")
                         return this.props.hideSubmenu()
