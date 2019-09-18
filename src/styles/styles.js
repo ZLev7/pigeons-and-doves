@@ -796,10 +796,15 @@ export const styles = {
     ResponsiveTable:  styled.table`
         border-collapse: collapse;
         width: 100%;
+        margin-bottom: 25px;
     `,
     
     ResponsiveTableImgContainer:  styled.tr`
         border: 3px solid ${(props) => props.theme.color};
+        &:first-child{
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        };
         width: 100%;
         padding: 0;
         text-align: center;
@@ -809,17 +814,19 @@ export const styles = {
         margin: 0;
         height: 100%;
         width: 100%;
+        padding-bottom: 3px;
     `,
     
     ResponsiveTableImg: styled.img`
         height: 80%;
         width: 100%;
-        border-bottom: 2px solid ${(props) => props.theme.color};
+        border-bottom: 3px solid ${(props) => props.theme.color};
     `,
     
-    ResponsiveTableCell: styled.tr`
+    ResponsiveTableCell: styled.td`
         border: 3px solid ${(props) => props.theme.color};
         text-align: center;
+        padding: 5px 0 5px 0;
     `,
     
 }
