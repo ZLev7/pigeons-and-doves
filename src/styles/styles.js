@@ -792,4 +792,34 @@ export const styles = {
         margin-top: 7px;
         margin-bottom: 0;
     `,
+
+    ResponsiveTable:  styled.table`
+        border-collapse: collapse;
+        width: 100%;
+    `,
+    
+    ResponsiveTableImgContainer:  styled.tr`
+        border: 3px solid ${(props) => props.theme.color};
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    `,
+    
+    ResponsiveTableFigure:  styled.figure`
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    `,
+    
+    ResponsiveTableImg: styled.img`
+        height: 80%;
+        width: 100%;
+        border-bottom: 2px solid ${(props) => props.theme.color};
+    `,
+    
+    ResponsiveTableCell: styled.tr`
+        border: 3px solid ${(props) => props.theme.color};
+        text-align: center;
+    `,
+    
 }
