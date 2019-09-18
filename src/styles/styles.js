@@ -801,10 +801,6 @@ export const styles = {
     
     ResponsiveTableImgContainer:  styled.tr`
         border: 3px solid ${(props) => props.theme.color};
-        &:first-child{
-            border-top-right-radius: 5px;
-            border-top-left-radius: 5px;
-        };
         width: 100%;
         padding: 0;
         text-align: center;
@@ -820,7 +816,6 @@ export const styles = {
     ResponsiveTableImg: styled.img`
         height: 80%;
         width: 100%;
-        border-bottom: 3px solid ${(props) => props.theme.color};
     `,
     
     ResponsiveTableCell: styled.td`
