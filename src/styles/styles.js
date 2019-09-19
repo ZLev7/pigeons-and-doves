@@ -757,7 +757,7 @@ export const styles = {
         position: relative;
         width: 100%;
         height: 0;
-        padding-bottom: 75.1%;
+        padding-bottom: 75%;
     `,
 
     ResponsiveYouTubeVideo:  styled.iframe`
